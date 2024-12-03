@@ -1,0 +1,163 @@
+/* Aggiungi un font moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Reset dei margini e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e font */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    color: #ECE9E4;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+header .logo {
+    margin-left: 20px;
+}
+
+header .logo img {
+    max-width: 200px;
+    height: auto;   
+}
+
+/* Navigazione */
+header nav {
+    flex-grow: 1;            /* Questo fa sì che il contenitore nav occupi lo spazio rimanente */
+    display: flex;
+    justify-content: flex-start; /* Allinea i link verso sinistra */
+    padding-left: 200px; 
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 40px;
+}
+
+header nav ul li a {
+    color: #ECE9E4;
+    text-decoration: none;
+    font-size: 1.0rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #F48037;   /* Colore al passaggio del mouse (arancio) */
+}
+
+/* Sezione Hero */
+.hero {
+    background: url('gym-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Servizi */
+.servizi {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    background-color: #f4f4f4;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    width: 30%;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+/* Testimonianze */
+.testimonianze {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.testimonianza {
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Contatti */
+.contatti {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.contatti form {
+    margin-top: 20px;
+}
+
+.contatti input, .contatti textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.contatti button {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contatti button:hover {
+    background-color: #e55b00;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
