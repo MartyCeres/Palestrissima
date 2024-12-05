@@ -66,21 +66,30 @@ header nav ul li a:hover {
 
 /* Sezione Hero */
 .hero {
-    background: url('gym-background.jpg') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
+    background: url('Image/training-828741_1280.jpg') no-repeat center center;
+    background-size: cover;
+    color: #ECE9E4;
+    text-align: left;
     padding: 100px 0;
+    height: 100vh;  /* Imposta l'altezza della sezione hero pari all'altezza della finestra */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0;
+    padding-left: 80px;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
 }
 
 .hero p {
     font-size: 1.2rem;
+    color: #F0EEE9;
 }
 
-/* Servizi */
+/* Servizi 
 .servizi {
     display: flex;
     justify-content: space-around;
@@ -109,8 +118,9 @@ header nav ul li a:hover {
 .card p {
     font-size: 1rem;
 }
+*/
 
-/* Testimonianze */
+/* Testimonianze 
 .testimonianze {
     text-align: center;
     padding: 2rem 0;
@@ -120,8 +130,9 @@ header nav ul li a:hover {
     margin-bottom: 1.5rem;
     font-style: italic;
 }
+*/
 
-/* Contatti */
+/* Contatti 
 .contatti {
     background-color: #333;
     color: #fff;
@@ -153,6 +164,7 @@ header nav ul li a:hover {
 .contatti button:hover {
     background-color: #e55b00;
 }
+*/
 
 /* Footer */
 footer {
