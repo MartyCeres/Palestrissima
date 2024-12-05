@@ -46,7 +46,7 @@ header .logo img {
 
 /* Navigazione */
 header nav {
-    flex-grow: 1;            /* Questo fa sì che il contenitore nav occupi lo spazio rimanente */
+    flex-grow: 1;   /* Questo fa sì che il contenitore nav occupi lo spazio rimanente */
     display: flex;
     justify-content: flex-start; /* Allinea i link verso sinistra */
     padding-left: 200px; 
@@ -98,12 +98,36 @@ header nav ul li a:hover {
     padding-left: 80px;
 }
 
+/* Stile per il pulsante */
+.button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #F48037;
+    color: #ECE9E4;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #F48037;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px; /* Aggiungi uno spazio sopra al pulsante */
+    transition: background-color 0.3s;
+    opacity: 0;  /* Impostiamo l'opacità iniziale a 0 */
+    animation: fadeIn 2s ease-out;  /* Applicare la stessa animazione di dissolvenza */
+    animation-delay: 1s;  /* Ritardo per far apparire il pulsante dopo il testo */
+    animation-fill-mode: forwards;  /* Mantieni l'opacità finale dopo l'animazione */
+}
+
+.button:hover {
+    background-color: transparent;
+    border-color: #F48037;
+}
+
 .hero h2 {
     font-size: 4.5rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #F0EEE9;
 }
 
