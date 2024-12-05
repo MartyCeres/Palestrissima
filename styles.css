@@ -32,6 +32,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* Inserimento trasparenza */
+    /*background-color: rgba(0, 0, 0, 0.7); */ /* Nero con il 70% di opacità */
+    /* position: fixed; *//* Rende la barra di navigazione fissa in cima alla pagina */
+    /* width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;*/ /* Mantiene la barra sopra gli altri elementi */
+    /* padding: 10px 20px; */ /* Distanza tra il bordo e gli elementi */ 
+    /* transition: background-color 0.3s ease;*/ /* Transizione per il colore di sfondo */
 }
 
 /* Logo */
@@ -210,8 +220,33 @@ header nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
+    background-color: #383E42; /* Colore di sfondo */
+    color: #ECE9E4; /* Colore del testo */
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
+    gap: 20px;  /* Distanza tra le colonne */
+}
+
+.footer-section {
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1rem;
+    color: #ECE9E4;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #4CAF50;
 }
