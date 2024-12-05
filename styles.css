@@ -1,6 +1,16 @@
 /* Aggiungi un font moderno */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
+/* Definisci l'animazione di dissolvenza */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;  /* Inizia invisibile */
+    }
+    100% {
+        opacity: 1;  /* Diventa visibile */
+    }
+}
+
 /* Reset dei margini e padding */
 * {
     margin: 0;
@@ -72,6 +82,14 @@ header nav ul li a:hover {
     text-align: left;
     padding: 100px 0;
     height: 100vh;  /* Imposta l'altezza della sezione hero pari all'altezza della finestra */
+}
+
+/* Applicare l'animazione al testo */
+.hero h2, .hero p {
+    animation: fadeIn 2s ease-out;
+    opacity: 0;  /* Imposta l'opacità iniziale a 0 */
+    animation-delay: 0.5s;  /* Ritarda di mezzo secondo l'inizio dell'animazione (opzionale) */
+    animation-fill-mode: forwards;  /* Mantieni l'opacità finale dopo l'animazione */
 }
 
 .hero-content {
