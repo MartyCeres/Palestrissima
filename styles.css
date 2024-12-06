@@ -248,5 +248,16 @@ footer {
 }
 
 .footer-section a:hover {
-    color: #4CAF50;
+    color: #F48037;
+}
+
+.footer-section i {
+    font-size: 2rem;  /* Imposta la dimensione dell'icona */
+    color: #ECE9E4;  /* Colore dell'icona */
+    margin: 10px;  /* Distanza tra le icone */
+    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
+}
+
+.footer-section i:hover {
+    color: #F48037;  /* Colore delle icone al passaggio del mouse */
 }
