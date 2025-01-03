@@ -178,8 +178,10 @@ header nav ul li a:hover {
 }
 
 .card img {
-    max-width: 100%;
-    border-radius: 8px;
+    width: 100%; /* La larghezza dell'immagine si adatta alla larghezza della card */
+    height: 200px; /* Imposta un'altezza fissa per tutte le immagini */
+    object-fit: cover; /* Ritaglia l'immagine per adattarla al contenitore senza distorsioni */
+    border-radius: 8px; /* Mantiene gli angoli arrotondati */
 }
 
 .card h3 {
