@@ -304,3 +304,104 @@ footer {
 .footer-section i:hover {
     color: #F48037;  /* Colore delle icone al passaggio del mouse */
 }
+
+
+/* Pagina Web Servizi */
+
+/* Introduzione dei Percorsi Personalizzati Online */
+.intro-section {
+    text-align: center;
+    color: #ECE9E4;
+    background: rgba(0, 0, 0, 0.9); /* Trasparenza del nero (70%) */
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    position: relative; /* Necessario per sovrapporre il testo all'immagine */
+    z-index: 1; /* Porta il contenuto in primo piano */
+}
+
+.intro-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Image/Sfondo\ servizi.jpg') no-repeat center center; /* Sostituisci con il percorso della tua immagine */
+    background-size: cover;
+    filter: grayscale(100%); /* Rende l'immagine in bianco e nero */
+    z-index: -1; /* Porta l'immagine sullo sfondo */
+    opacity: 0.4; /* Effetto trasparenza sull'immagine */
+}
+
+.intro-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #F48037;
+}
+
+.intro-section p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    color: #ECE9E4;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Posiziona l'immagine sotto il testo */
+    left: 0;
+    width: 100%;
+    height: 15px; /* Altezza della pennellata */
+    background: url('Image/brush-stroke.png') no-repeat center;
+    background-size: cover; /* Assicura che l'immagine si adatti perfettamente */
+    z-index: -1;
+}
+
+.arrow {
+    margin-top: 20px;
+}
+
+.arrow p {
+    font-size: 1.2rem;
+    color: #ECE9E4;
+}
+
+/* Descrizione Percorsi personalizzati online */
+.service-section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.service-section h2 {
+    color: #F48037;
+    margin-bottom: 20px;
+}
+
+.service-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #383E42;
+    color: #ECE9E4;
+    font-size: 1.2rem;
+}
+
+.service-table td {
+    border: 1px solid #F48037;
+    padding: 15px;
+    text-align: center;
+}
+
+.service-table tr:first-child td {
+    font-weight: bold;
+    background-color: #F48037;
+    color: white;
+}
+
