@@ -141,20 +141,40 @@ header nav ul li a:hover {
     color: #F0EEE9;
 }
 
-/* Servizi 
+/* Servizi */
 .servizi {
     display: flex;
-    justify-content: space-around;
-    padding: 2rem 0;
-    background-color: #f4f4f4;
+    flex-direction: column; /* Dispone gli elementi verticalmente */
+    align-items: center; /* Centra gli elementi orizzontalmente */
+    padding: 50px 0;
+    background-color: #ECE9E4;
+}
+
+.servizi h2 {
+    margin: 0; /* Rimuove i margini predefiniti */
+    color: #383E42; /* Colore del testo */
+    font-size: 2.5rem; /* Dimensione del titolo */
+    text-align: center; /* Allinea il testo al centro */
+}
+
+/* Container per le card */
+.card-container {
+    display: flex; /* Dispone le card in fila orizzontale */
+    justify-content: space-around; /* Spaziatura uniforme tra le card */
+    gap: 20px; /* Distanza tra le card */
+    margin-top: 2rem; /* Spazio tra il titolo e le card */
+    width: 100%; /* Occupa tutta la larghezza della sezione */
 }
 
 .card {
-    background-color: #fff;
+    background-color: #F0EEE9;
+    color: #383E42;
     border-radius: 8px;
+    border: 3px solid #F48037; /* Aggiunge un bordo colorato */
     padding: 1rem;
     text-align: center;
-    width: 30%;
+    width: 30%; /* Ogni card occupa il 30% della larghezza */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra */
 }
 
 .card img {
@@ -170,7 +190,28 @@ header nav ul li a:hover {
 .card p {
     font-size: 1rem;
 }
-*/
+
+.card-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #F48037;
+    color: #ECE9E4;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #F48037;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: transparent;
+    color: #383E42;
+    border-color: #F48037;
+}
+
 
 /* Testimonianze 
 .testimonianze {
