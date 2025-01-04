@@ -386,6 +386,7 @@ main {
     text-align: center;
 }
 
+/* Freccia */
 .arrow-down {
     text-align: center;
     margin: -20px 0 10px; /* Porta la freccia verso il margine superiore della sezione */
@@ -398,30 +399,49 @@ main {
     color: #F48037; /* Colore della freccia */
 }
 
-
-.service-section h2 {
-    color: #F48037;
+/* Titolo delle Tabelle */
+.title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
 }
 
+.subtitle {
+    font-size: 1.5rem; /* Dimensione più piccola per "PERCORSO" */
+    background-color: #F48037; /* Sfondo colorato */
+    color: white; /* Colore del testo */
+    padding: 5px 10px; /* Spaziatura intorno al testo */
+    text-transform: uppercase; /* Tutte le lettere maiuscole */
+    margin-bottom: 5px; /* Spazio tra "PERCORSO" e "EVOLUTION" */
+}
+
+.main-title {
+    font-size: 2.5rem; /* Dimensione più grande per "EVOLUTION" */
+    color: #F48037; /* Colore del testo */
+    font-weight: bold; /* Testo in grassetto */
+    letter-spacing: 10px; /* Aumenta la spaziatura tra le lettere */
+}
+
+/* Tabelle */
 .service-table {
     margin: 0 auto;
     border-collapse: collapse;
     width: 80%;
-    background-color: #383E42;
+    background-color: transparent;
     color: #ECE9E4;
     font-size: 1.2rem;
 }
 
 .service-table td {
-    border: 1px solid #F48037;
+    border: 5px solid #F48037;
     padding: 15px;
     text-align: center;
 }
 
 .service-table tr:first-child td {
     font-weight: bold;
-    background-color: #F48037;
     color: white;
 }
+
 
