@@ -374,10 +374,30 @@ footer {
 }
 
 /* Descrizione Percorsi personalizzati online */
+main {
+    background: rgba(0, 0, 0, 0.9); /* Sfondo nero trasparente */
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Facoltativo: aggiunge profondità */
+    min-height: 100vh; /* L'altezza minima sarà pari all'altezza della finestra */
+}
+
 .service-section {
     margin: 50px 0;
     text-align: center;
 }
+
+.arrow-down {
+    text-align: center;
+    margin: -20px 0 10px; /* Porta la freccia verso il margine superiore della sezione */
+    position: relative;
+    z-index: 2; /* Garantisce che la freccia sia visibile sopra altri elementi */
+}
+
+.arrow-down i {
+    font-size: 3rem; /* Dimensione della freccia */
+    color: #F48037; /* Colore della freccia */
+}
+
 
 .service-section h2 {
     color: #F48037;
