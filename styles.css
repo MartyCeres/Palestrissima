@@ -32,16 +32,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    /* Inserimento trasparenza */
-    /*background-color: rgba(0, 0, 0, 0.7); */ /* Nero con il 70% di opacità */
-    /* position: fixed; *//* Rende la barra di navigazione fissa in cima alla pagina */
-    /* width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;*/ /* Mantiene la barra sopra gli altri elementi */
-    /* padding: 10px 20px; */ /* Distanza tra il bordo e gli elementi */ 
-    /* transition: background-color 0.3s ease;*/ /* Transizione per il colore di sfondo */
 }
 
 /* Logo */
@@ -306,38 +296,50 @@ footer {
 }
 
 
-/* Pagina Web Servizi */
+/* ------------ Pagina Web Servizi ------------------------------------------- */
 
-/* Introduzione Pagina Servizi */
+/* Stile per la sezione */
 .intro-service {
     padding: 50px 20px;
     background: rgba(0, 0, 0, 0.9); /* Sfondo trasparente */
     color: #ECE9E4;
 }
 
+/* Layout flessibile */
 .intro-service-content {
-    display: flex; /* Layout a due colonne */
-    flex-wrap: wrap; /* Assicura la responsività su schermi piccoli */
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 20px; /* Spaziatura tra le colonne */
+    gap: 20px;
 }
 
+/* Colonna immagine */
 .intro-service-image {
-    flex: 1; /* Occupa metà dello spazio disponibile */
+    flex: 1;
     text-align: center;
 }
 
 .intro-service-image img {
-    max-width: 100%; /* Adatta l'immagine alla colonna */
-    height: auto; /* Mantiene le proporzioni */
-    border-radius: 10px; /* Opzionale: arrotonda gli angoli dell'immagine */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
+/* Colonna testo */
 .intro-service-text {
-    flex: 2; /* Occupa più spazio rispetto alla colonna immagine */
-    text-align: left; /* Allinea il testo a sinistra */
+    flex: 2;
+    text-align: left;
+    opacity: 0; /* Testo inizialmente nascosto */
+    transform: translateY(20px); /* Spostato leggermente verso il basso */
+    transition: opacity 1s ease, transform 1s ease; /* Transizione fluida */
 }
 
+.intro-service-text.visible {
+    opacity: 1; /* Testo visibile */
+    transform: translateY(0); /* Riporta il testo alla posizione originale */
+}
+
+/* Titoli e paragrafi */
 .intro-service-text h1 {
     font-size: 2.5rem;
     color: #F48037;
@@ -357,7 +359,6 @@ footer {
 }
 
 /* Sezione Allenamento One to One */
-
 .one-to-one-section {
     text-align: center;
     color: #ECE9E4;
@@ -383,6 +384,23 @@ footer {
     opacity: 0.4; /* Effetto trasparenza sull'immagine */
 }
 
+.one-to-one-text {
+    opacity: 0; /* Testo inizialmente invisibile */
+    transform: translateY(20px); /* Spostato leggermente verso il basso */
+    transition: opacity 2s ease, transform 2s ease; /* Transizione fluida */
+}
+
+.one-to-one-section:hover .one-to-one-text {
+    opacity: 1; /* Rende il testo visibile al passaggio del mouse */
+    transform: translateY(0); /* Riporta il testo alla posizione originale */
+}
+
+.one-to-one-text.visible {
+    opacity: 1; /* Rende il testo visibile quando entra nel viewport */
+    transform: translateY(0); /* Posiziona il testo correttamente */
+}
+
+
 .one-to-one-section h2 {
     color: #F48037;
     font-size: 2.5rem;
@@ -396,25 +414,38 @@ footer {
 }
 
 .benefits-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    text-align: left;
-    margin: 20px auto;
-    max-width: 800px;
+    list-style-type: none; /* Rimuove i punti dell'elenco */
+    padding: 0; /* Rimuove i margini interni */
+    text-align: center; /* Centra il contenuto della lista */
 }
 
 .benefits-list li {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    padding: 5px 10px; /* Spaziatura interna per maggiore leggibilità */
-    border-radius: 5px; /* Arrotonda gli angoli dell'evidenziatura */
+    margin-bottom: 20px; /* Spaziatura tra gli elementi */
+    font-size: 1.2rem; /* Dimensione del testo */
+    position: relative; /* Necessario per la sottolineatura */
+    color: #ECE9E4; /* Colore del testo */
+    font-weight: bold; /* Grassetto per il testo */
+    padding-bottom: 5px; /* Spazio per la sottolineatura */
+    display: block; /* Ogni elemento sarà a capo */
+    text-align: center; /* Centra il testo all'interno di ogni elemento */
 }
 
-.benefits-list li.sot {
-    background-color: #F48037; /* Colore arancione per evidenziare */
-    color: #fff; /* Testo bianco per contrasto */
-    font-weight: bold; /* Testo in grassetto */
-    display: inline-block; /* Si adatta al contenuto del testo */
+.benefits-list li::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Posiziona la sottolineatura sotto il testo */
+    left: 0; /* Inizia la sottolineatura all'inizio del testo */
+    width: 100%; /* Larghezza della sottolineatura uguale al testo */
+    height: 3px; /* Altezza della sottolineatura */
+    background-color: #F48037; /* Colore della sottolineatura */
+    opacity: 0.7; /* Trasparenza iniziale */
+    z-index: -1; /* Posiziona la sottolineatura dietro il testo */
+    transition: opacity 0.3s, height 0.3s; /* Effetto transizione per hover */
+}
+
+.benefits-list li:hover::after {
+    opacity: 1; /* Sottolineatura completamente visibile al passaggio del mouse */
+    height: 5px; /* Aumenta lo spessore della sottolineatura */
 }
 
 .cta-button {
@@ -432,13 +463,6 @@ footer {
 .cta-button:hover {
     background-color: #E06A33;
 }
-
-
-
-
-
-
-
 
 /* Introduzione dei Percorsi Personalizzati Online */
 .intro-section {
