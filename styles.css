@@ -406,6 +406,15 @@ footer {
 .benefits-list li {
     margin-bottom: 10px;
     font-size: 1.2rem;
+    padding: 5px 10px; /* Spaziatura interna per maggiore leggibilità */
+    border-radius: 5px; /* Arrotonda gli angoli dell'evidenziatura */
+}
+
+.benefits-list li.sot {
+    background-color: #F48037; /* Colore arancione per evidenziare */
+    color: #fff; /* Testo bianco per contrasto */
+    font-weight: bold; /* Testo in grassetto */
+    display: inline-block; /* Si adatta al contenuto del testo */
 }
 
 .cta-button {
