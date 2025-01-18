@@ -14,7 +14,7 @@
     }
 }); */
 
-// Transizione Introduzione Pagina Servizi
+/* Transizione Introduzione Pagina Servizi */
 
 document.addEventListener('DOMContentLoaded', function () {
     // Seleziona l'elemento con la classe .intro-service-text
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(introText);
 });
 
+/* Transizione Sezione Allenamento One to One */
 document.addEventListener('DOMContentLoaded', function () {
     const oneToOneText = document.querySelector('.one-to-one-text');
 
@@ -72,6 +73,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     observer.observe(oneToOneText);
 });
+
+/* Small Group - Effetto transizione e scorrimento frecce */
+document.addEventListener('DOMContentLoaded', function () {
+    const smallGroupContent = document.querySelector('.small-group-content');
+    const cards = document.querySelectorAll('.card-sm.transition');
+    const slider = document.querySelector('.card-sm-slider');
+    const leftArrow = document.querySelector('.arrowsm-left'); // Selettore aggiornato
+    const rightArrow = document.querySelector('.arrowsm-right'); // Selettore aggiornato
+    const cardWidth = slider.querySelector('.card-sm').offsetWidth + 20; // Larghezza card + gap
+
+    // Funzione per attivare la visibilità
+    const activateVisibility = (entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Interrompe l'osservazione
+        }
+    };
+
+    // Osservatore per la transizione
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(activateVisibility);
+        },
+        { threshold: 0.5 } // La sezione deve essere visibile almeno al 50%
+    );
+
+    // Avvia l'osservazione della sezione e delle card
+    if (smallGroupContent) observer.observe(smallGroupContent);
+    cards.forEach((card) => observer.observe(card));
+
+    // Scorrimento con le frecce (se esistono)
+    if (leftArrow && rightArrow && slider) {
+        leftArrow.addEventListener('click', () => {
+            slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+    
+        rightArrow.addEventListener('click', () => {
+            slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+    }
+});
+
+
 
 
 

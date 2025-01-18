@@ -400,7 +400,6 @@ footer {
     transform: translateY(0); /* Posiziona il testo correttamente */
 }
 
-
 .one-to-one-section h2 {
     color: #F48037;
     font-size: 2.5rem;
@@ -462,6 +461,170 @@ footer {
 
 .cta-button:hover {
     background-color: #E06A33;
+}
+
+/* Sezione Small Group */
+
+/* Sezione inizialmente nascosta */
+.small-group-content {
+    opacity: 0;
+    transform: translateY(20px); /* Sposta il contenitore verso il basso */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Transizione fluida */
+}
+
+/* Contenuto visibile */
+.small-group-content.visible {
+    opacity: 1;
+    transform: translateY(0); /* Riporta il contenuto alla posizione originale */
+}
+
+/* Card inizialmente nascoste */
+.card-sm.transition {
+    opacity: 0;
+    transform: translateY(20px); /* Sposta le card verso il basso */
+    transition: opacity 1s ease, transform 1s ease; /* Transizione fluida */
+}
+
+/* Card visibili */
+.card-sm.transition.visible {
+    opacity: 1;
+    transform: translateY(0); /* Riporta le card alla posizione originale */
+}
+
+/* Stile generale per la sezione */
+.small-group-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #ECE9E4;
+    text-align: center;
+}
+
+.small-group-section h2 {
+    font-size: 2.5rem;
+    color: #F48037;
+    margin-bottom: 30px;
+}
+
+.small-group-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Effetto transizione per tutto il contenuto */
+.small-group-content.transition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.small-group-content.transition.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative; /* Assicura che le frecce siano posizionate rispetto a questo contenitore */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; /* Nasconde gli elementi che escono dal contenitore */
+    padding: 0 40px; /* Spazio extra per le frecce */
+    box-sizing: border-box; /* Include il padding nella larghezza totale */
+}
+
+/* Card Slider */
+.card-sm-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden; /* Scorrimento orizzontale */
+    scroll-behavior: smooth; /* Scorrimento fluido */
+    width: calc(100% - 100px); /* Lascia spazio per le frecce */
+    margin-left: auto; /* Bilancia margini per centrare il contenuto */
+    margin-right: auto;
+    justify-content: flex-start; /* Allinea le card a sinistra */
+    scrollbar-width: none; /* Nasconde la barra di scorrimento */
+    padding: 20px 10px; /* Margine superiore e inferiore per compensare lo zoom */
+}
+
+.card-sm-slider::-webkit-scrollbar {
+    display: none; /* Nasconde la barra di scorrimento */
+}
+
+/* Card */
+.card-sm {
+    flex: 0 0 calc((100% - 80px) / 3); /* Tre card visibili con gap */
+    max-width: calc((100% - 80px) / 3);
+    background-color: #F0EEE9;
+    border-radius: 8px;
+    border: 3px solid #F48037; /* Aggiunge un bordo colorato */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+}
+
+.card-sm img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Adatta l'immagine al contenitore */
+}
+
+.card-sm-content {
+    padding: 15px;
+    color: #383E42;
+}
+
+.card-sm-content h3 {
+    font-size: 1.5rem;
+    color: #F48037;
+    margin-bottom: 10px;
+}
+
+.card-sm-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.card-sm:hover {
+    transform: scale(1.05); /* Effetto zoom al passaggio del mouse */
+}
+
+/* Frecce */
+.arrowsm {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7); /* Sfondo semi-trasparente */
+    border: none;
+    color: #ECE9E4;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma circolare */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Porta sopra le card */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.arrowsm:hover {
+    background: #F48037;
+    color: white;
+    transform: scale(1.1); /* Ingrandisce leggermente la freccia al passaggio del mouse */
+}
+
+.arrowsm-left {
+    left: 10px; /* Posiziona la freccia a sinistra */
+    top: 50%; /* Allinea verticalmente */
+    transform: translateY(-50%);
+}
+
+.arrowsm-right {
+    right: 10px; /* Posiziona la freccia a destra */
+    top: 50%; /* Allinea verticalmente */
+    transform: translateY(-50%);
 }
 
 /* Introduzione dei Percorsi Personalizzati Online */
