@@ -115,6 +115,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+/* Effetto trasizione e zoom su colonne */
+document.addEventListener('DOMContentLoaded', function () {
+    const healthServicesSection = document.querySelector('.health-services-section');
+    const columns = document.querySelectorAll('.column'); // Colonne individuali
+    const dividers = document.querySelectorAll('.health-divider'); // Linee separatrici
+
+    // Osservatore per la transizione della sezione, delle colonne e dei divider
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Attiva la transizione per la sezione principale
+                    if (entry.target === healthServicesSection) {
+                        healthServicesSection.classList.add('visible');
+                    }
+
+                    // Attiva la transizione per ogni colonna
+                    if (entry.target.classList.contains('column')) {
+                        entry.target.classList.add('visible');
+                    }
+
+                    // Attiva la transizione per i divider
+                    if (entry.target.classList.contains('health-divider')) {
+                        entry.target.classList.add('visible');
+                    }
+
+                    // Interrompe l'osservazione per l'elemento visibile
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.5 } // Soglia di visibilità al 50%
+    );
+
+    // Avvia l'osservazione della sezione, delle colonne e dei divider
+    observer.observe(healthServicesSection);
+    columns.forEach((column) => observer.observe(column));
+    dividers.forEach((divider) => observer.observe(divider));
+});
+
 
 
 

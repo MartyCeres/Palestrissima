@@ -629,6 +629,9 @@ footer {
 }
 
 /* *************************** Introduzione dei Percorsi Personalizzati Online ********************** */
+
+
+/* Inizio sezione per lo stile */
 .intro-section {
     text-align: center;
     color: #ECE9E4;
@@ -762,6 +765,147 @@ main {
 .service-table tr:first-child td {
     font-weight: bold;
     color: white;
+}
+
+/* ********************************* Sezione Nutrizionista, Fisioterapia, Osteopatia ********************* */
+
+/* Transizione per il contenuto */
+.health-services-section h2,
+.health-services-section p {
+    opacity: 0; /* Inizialmente invisibile */
+    transform: translateY(20px); /* Leggero spostamento verso il basso */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.health-services-section.visible h2,
+.health-services-section.visible p {
+    opacity: 1; /* Testo visibile */
+    transform: translateY(0); /* Torna alla posizione originale */
+}
+
+/* Transizione per le colonne */
+.column,
+.health-divider {
+    opacity: 0; /* Inizialmente invisibile */
+    transform: translateY(30px); /* Spostata verso il basso */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.column.visible,
+.health-divider.visible {
+    opacity: 1; /* Visibile */
+    transform: translateY(0); /* Torna alla posizione originale */
+}
+
+/* Sezione Generale */
+.health-services-section {
+    text-align: center;
+    color: #ECE9E4;
+    background: rgba(0, 0, 0, 0.9); /* Sfondo fisso */
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    position: relative; /* Necessario per sovrapporre il testo all'immagine */
+    z-index: 1; /* Porta il contenuto in primo piano */
+}
+
+.health-services-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Image/health-section-intro.jpg') no-repeat center center;
+    background-size: cover;
+    filter: grayscale(100%); /* Rende l'immagine in bianco e nero */
+    z-index: -1; /* Porta l'immagine sullo sfondo */
+    opacity: 0.2; /* Trasparenza fissa */
+}
+
+.health-header h2 {
+    font-size: 2.5rem;
+    color: #F48037;
+    margin-bottom: 20px;
+}
+
+.health-header p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #ECE9E4;
+}
+
+/* Contenitore delle Colonne */
+.health-services-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    text-align: center;
+    position: relative; /* Posizionamento relativo per il layout */
+}
+
+/* Colonne */
+.column {
+    flex: 1;
+    padding: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.column:hover {
+    transform: scale(1.05); /* Effetto di ingrandimento sulla colonna */
+}
+
+/* Titolo delle Colonne */
+.column h3 {
+    font-size: 1.8rem;
+    color: #F48037; 
+    margin-bottom: 15px;
+}
+
+/* Testo delle Colonne */
+.column p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ECE9E4; 
+    margin-bottom: 20px;
+}
+
+/* Immagini */
+.column img {
+    width: 100%;
+    max-width: 300px; /* Dimensione massima delle immagini */
+    height: auto;
+    filter: grayscale(100%); /* Applica il filtro bianco e nero */
+    transition: filter 0.3s ease; /* Transizione del colore */
+    margin: 15px 0;
+}
+
+.column:hover img {
+    filter: grayscale(0%); /* Rimuove il filtro bianco e nero */
+}
+
+/* Linea separatrice */
+.health-divider {
+    width: 5px; /* Larghezza della linea */
+    height: auto; /* Altezza uguale a quella delle colonne */
+    background: #F48037; /* Colore arancione */
+    margin: 0 20px; /* Spazio orizzontale tra le colonne */
+    display: block; /* Rende la linea visibile tra le colonne */
+    min-height: 100%; /* Assicura che occupi l'altezza del contenitore */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Transizione lenta */
+}
+
+/* Linea separatrice */
+.health-divider {
+    width: 5px; /* Larghezza della linea */
+    height: auto; /* Si adatta all'altezza delle colonne */
+    background: #F48037; /* Colore arancione */
+    margin: 0 20px; /* Spazio orizzontale tra le colonne */
+    display: inline-block; /* Rende la linea visibile tra le colonne */
+    align-self: stretch; /* Si estende per l'altezza completa del contenitore */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Transizione lenta */
 }
 
 
