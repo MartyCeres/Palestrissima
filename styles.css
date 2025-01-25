@@ -556,19 +556,20 @@ footer {
 .card-sm {
     flex: 0 0 calc((100% - 80px) / 3); /* Tre card visibili con gap */
     max-width: calc((100% - 80px) / 3);
-    background-color: #F0EEE9;
+    background-color: #ECE9E4;
     border-radius: 8px;
     border: 3px solid #F48037; /* Aggiunge un bordo colorato */
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
-    
+    padding: 10px;
 }
 
 .card-sm img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover; /* Adatta l'immagine al contenitore */
+    width: 100%; /* La larghezza dell'immagine si adatta alla larghezza della card */
+    height: 250px; /* Imposta un'altezza fissa per tutte le immagini */
+    object-fit: cover; /* Ritaglia l'immagine per adattarla al contenitore senza distorsioni */
+    border-radius: 8px; /* Mantiene gli angoli arrotondati */
 }
 
 .card-sm-content {
