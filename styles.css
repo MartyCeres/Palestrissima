@@ -358,7 +358,7 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Sezione Allenamento One to One */
+/* ******************* Sezione Allenamento One to One *********************** */
 .one-to-one-section {
     text-align: center;
     color: #ECE9E4;
@@ -463,7 +463,7 @@ footer {
     background-color: #E06A33;
 }
 
-/* Sezione Small Group */
+/* ************************** Sezione Small Group ******************************* */
 
 /* Sezione inizialmente nascosta */
 .small-group-content {
@@ -627,7 +627,7 @@ footer {
     transform: translateY(-50%);
 }
 
-/* Introduzione dei Percorsi Personalizzati Online */
+/* *************************** Introduzione dei Percorsi Personalizzati Online ********************** */
 .intro-section {
     text-align: center;
     color: #ECE9E4;
