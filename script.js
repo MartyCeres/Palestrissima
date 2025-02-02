@@ -181,3 +181,20 @@ document.addEventListener('DOMContentLoaded', function () {
     columns.forEach((column) => observer.observe(column));
     dividers.forEach((divider) => observer.observe(divider));
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,294 @@
+/* Aggiungi un font moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Definisci l'animazione di dissolvenza */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;  /* Inizia invisibile */
+    }
+    100% {
+        opacity: 1;  /* Diventa visibile */
+    }
+}
+
+/* Reset dei margini e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e font */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #383E42;
+    color: #ECE9E4;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+header .logo {
+    margin-left: 20px;
+}
+
+header .logo img {
+    max-width: 200px;
+    height: auto;   
+}
+
+/* Navigazione */
+header nav {
+    flex-grow: 1;   /* Questo fa sì che il contenitore nav occupi lo spazio rimanente */
+    display: flex;
+    justify-content: flex-start; /* Allinea i link verso sinistra */
+    padding-left: 200px; 
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 40px;
+}
+
+header nav ul li a {
+    color: #ECE9E4;
+    text-decoration: none;
+    font-size: 1.0rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #F48037;   /* Colore al passaggio del mouse (arancio) */
+}
+
+/* Footer */
+footer {
+    background-color: #383E42; /* Colore di sfondo */
+    color: #ECE9E4; /* Colore del testo */
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
+    gap: 20px;  /* Distanza tra le colonne */
+}
+
+.footer-section {
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1rem;
+    color: #ECE9E4;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #F48037;
+}
+
+.footer-section i {
+    font-size: 2rem;  /* Imposta la dimensione dell'icona */
+    color: #ECE9E4;  /* Colore dell'icona */
+    margin: 10px;  /* Distanza tra le icone */
+    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
+}
+
+.footer-section i:hover {
+    color: #F48037;  /* Colore delle icone al passaggio del mouse */
+}
+
+/* ------------ Pagina Web Contatti ------------------------------------------- */
+
+/* SEZIONE CONTATTI */
+.contact-section {
+    position: relative; /* Per sovrapporre l'immagine */
+    text-align: center;
+    padding: 50px 20px;
+    color: #ECE9E4;
+    overflow: hidden; /* Evita problemi con i contenuti */
+}
+
+/* Sfondo immagine */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Image/SfondoContatti.jpg') no-repeat center center; /* Sostituisci con il tuo percorso */
+    background-size: cover;
+    filter: brightness(40%); /* Oscura l'immagine */
+    z-index: -1; /* Mette l'immagine dietro il testo */
+}
+
+/* CONTENITORE GENERALE */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch; /* Allinea tutti gli elementi alla stessa altezza */
+    padding: 40px;
+    background: #000; /* Sfondo nero */
+}
+
+/* HEADER CONTATTI DENTRO IL CONTAINER */
+.contact-header {
+    flex: 1 1 100%; /* Occupa tutta la larghezza sopra i box */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    color: #F48037; /* Testo arancione */
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    color: #ECE9E4;
+}
+
+/* BOX CONTATTI */
+.contact-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra orizzontalmente */
+    justify-content: center; /* Allinea verticalmente */
+    text-align: center;
+    padding: 20px;
+    color: #ECE9E4;
+    min-height: 200px; /* Imposta una stessa altezza per tutti */
+}
+
+/* ICONA */
+.contact-box i {
+    font-size: 3rem;
+    color: #F48037;
+    margin-bottom: 15px;
+}
+
+/* TESTO BOX */
+.contact-box h3 {
+    font-size: 1.5rem;
+    color: #F48037;
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+
+/* -------------- Sezione Mappa ------------------------------ */
+.contact-map-section {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9); /* Sfondo scuro */
+    color: #ECE9E4;
+    padding: 50px 20px;
+}
+
+/* Titolo della sezione */
+.contact-map-section h2 {
+    font-size: 2.5rem;
+    color: #F48037; /* Testo arancione */
+    margin-bottom: 20px;
+}
+
+/* Contenitore della mappa */
+.contact-map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 600px; /* Dimensione massima della mappa */
+    margin: 0 auto;
+}
+
+/* Stile dell'immagine della mappa */
+.map img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%); /* Rende la mappa in bianco e nero */
+}
+
+/* Marker per la posizione */
+.map-marker {
+    position: absolute;
+    top: 27%; /* Regola la posizione verticale */
+    left: 45%; /* Regola la posizione orizzontale */
+    transform: translate(-50%, -100%); /* Centra il marker sulla posizione */
+    width: 40px;
+    height: 40px;
+    background: url("Image/location-pin.png") no-repeat center;
+    background-size: contain;
+    animation: bounce 1.5s infinite;
+}
+
+.map-marker i {
+    font-size: 40px;
+    color: #F48037;
+}
+
+.map-marker::after {
+    content: "Lugo (RA)";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #F48037;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.map-marker:hover::after {
+    opacity: 1;
+}
+
+
+/* Effetto "rimbalzo" per il marker */
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, -100%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -110%) scale(1.1);
+    }
+}
+
+
