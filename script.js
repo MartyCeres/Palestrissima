@@ -14,7 +14,9 @@
     }
 }); */
 
-/* Transizione Introduzione Pagina Servizi */
+/* **************************************** Pagina Servizi *************************************************** */ 
+
+/* -------------- Transizione Introduzione Pagina Servizi ------------------------- */
 
 document.addEventListener('DOMContentLoaded', function () {
     // Seleziona l'elemento con la classe .intro-service-text
@@ -50,7 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(introText);
 });
 
-/* Transizione Sezione Allenamento One to One */
+/* ------------------------------ Transizione Sezione Allenamento One to One -------------------------- */
+
 document.addEventListener('DOMContentLoaded', function () {
     const oneToOneText = document.querySelector('.one-to-one-text');
 
@@ -74,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(oneToOneText);
 });
 
-/* Small Group - Effetto transizione e scorrimento frecce */
+/* --------------------------- Small Group - Effetto transizione e scorrimento frecce -------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
     const smallGroupContent = document.querySelector('.small-group-content');
     const cards = document.querySelectorAll('.card-sm.transition');
@@ -115,7 +118,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-/* Effetto trasizione e zoom su colonne */
+/* ---------------------------- Percorsi personalizzati Online - effetto transizione --------------------------------------------------------------------- */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const elementsToObserve = document.querySelectorAll('.intro-section h2, .intro-section p, .arrow-down, .subtitle, .main-title, .service-table'); 
+
+    // Osservatore per la transizione
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Aggiunge la classe .visible
+                    observer.unobserve(entry.target); // Interrompe l'osservazione dopo la transizione
+                }
+            });
+        },
+        { threshold: 0.5 } // L'elemento deve essere almeno al 50% visibile
+    );
+
+    // Avvia l'osservazione su tutti gli elementi
+    elementsToObserve.forEach((element) => observer.observe(element));
+});
+
+
+/* ------------------------ Fisioterapia, Osteopatia e Nutrizionista - Effetto trasizione e zoom su colonne ------------------------------------------------ */
+
 document.addEventListener('DOMContentLoaded', function () {
     const healthServicesSection = document.querySelector('.health-services-section');
     const columns = document.querySelectorAll('.column'); // Colonne individuali
@@ -154,9 +181,3 @@ document.addEventListener('DOMContentLoaded', function () {
     columns.forEach((column) => observer.observe(column));
     dividers.forEach((divider) => observer.observe(divider));
 });
-
-
-
-
-
-
