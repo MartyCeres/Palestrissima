@@ -212,83 +212,192 @@ footer {
 
 
 /* -------------- Sezione Mappa ------------------------------ */
+/* Sezione Generale */
 .contact-map-section {
     text-align: center;
-    background: rgba(0, 0, 0, 0.9); /* Sfondo scuro */
+    background: rgba(0, 0, 0, 0.9);
     color: #ECE9E4;
     padding: 50px 20px;
 }
 
-/* Titolo della sezione */
+/* Titolo */
 .contact-map-section h2 {
     font-size: 2.5rem;
-    color: #F48037; /* Testo arancione */
+    color: #F48037;
     margin-bottom: 20px;
 }
 
-/* Contenitore della mappa */
+/* Contenitore della Mappa e Riquadro */
+.contact-map-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px; /* Larghezza massima della sezione */
+    margin: 0 auto;
+    gap: 30px;
+}
+
+/* Contenitore della Mappa */
 .contact-map-container {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    max-width: 600px; /* Dimensione massima della mappa */
-    margin: 0 auto;
+    max-width: 500px;
 }
 
-/* Stile dell'immagine della mappa */
+/* Immagine della Mappa */
 .map img {
     width: 100%;
     height: auto;
-    filter: grayscale(100%); /* Rende la mappa in bianco e nero */
+    filter: grayscale(100%);
+    border-radius: 10px;
 }
 
 /* Marker per la posizione */
 .map-marker {
     position: absolute;
-    top: 27%; /* Regola la posizione verticale */
-    left: 45%; /* Regola la posizione orizzontale */
-    transform: translate(-50%, -100%); /* Centra il marker sulla posizione */
-    width: 40px;
-    height: 40px;
-    background: url("Image/location-pin.png") no-repeat center;
-    background-size: contain;
-    animation: bounce 1.5s infinite;
-}
-
-.map-marker i {
+    top: 27%; /* Regola la posizione */
+    left: 45%;
+    transform: translate(-50%, -100%);
     font-size: 40px;
     color: #F48037;
 }
 
-.map-marker::after {
-    content: "Lugo (RA)";
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Riquadro delle Informazioni */
+.contact-info-box {
+    flex: 1;
+    background: rgba(56, 62, 66, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* Stile del Testo */
+.contact-info-box h3 {
+    font-size: 1.8rem;
+    color: #F48037;
+    margin-bottom: 10px;
+}
+
+.contact-info-box p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Link a Google Maps */
+.map-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
     background: #F48037;
-    color: white;
-    padding: 5px 10px;
+    color: #ECE9E4;
+    text-decoration: none;
+    font-weight: bold;
     border-radius: 5px;
-    font-size: 0.9rem;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
-.map-marker:hover::after {
-    opacity: 1;
+.map-link:hover {
+    background: #E06A33;
 }
 
 
-/* Effetto "rimbalzo" per il marker */
-@keyframes bounce {
-    0%, 100% {
-        transform: translate(-50%, -100%) scale(1);
+
+@media (max-width: 768px) {
+    .contact-map-wrapper {
+        flex-direction: column;
+        text-align: center;
     }
-    50% {
-        transform: translate(-50%, -110%) scale(1.1);
+
+    .contact-info-box {
+        text-align: center;
+        padding: 15px;
     }
 }
 
+/* -------------- Sezione Social ------------------------------ */
 
+/* Sezione Social */
+.social-section {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    color: #ECE9E4;
+    padding: 50px 20px;
+}
+
+/* Titolo della Sezione */
+.social-section h2 {
+    font-size: 2.5rem;
+    color: #F48037;
+    margin-bottom: 10px;
+}
+
+.social-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Contenitore delle Box Social */
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Singola Box Social */
+.social-box {
+    flex: 1;
+    background: rgba(56, 62, 66, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-box:hover {
+    transform: scale(1.05);
+}
+
+/* Icone Social */
+.social-box i {
+    font-size: 3rem;
+    color: #F48037;
+    margin-bottom: 10px;
+}
+
+/* Nome del Social */
+.social-box h3 {
+    font-size: 1.5rem;
+    color: #F48037;
+    margin-bottom: 10px;
+}
+
+/* Link ai Social */
+.social-box a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ECE9E4;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 15px;
+    background: #F48037;
+    transition: 0.3s ease-in-out;
+}
+
+.social-box a:hover {
+    background: #E06A33;
+}
+
+/* QR Code */
+.social-box img {
+    width: 100px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
