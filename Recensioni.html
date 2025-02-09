@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palestrissima</title>
-    <link rel="stylesheet" href="style_Contatti.css">
+    <link rel="stylesheet" href="style_Recensioni.css">
     
     <!-- Link a Font Awesome (CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -20,79 +20,156 @@
                 <li><a href="Servizi.html">Servizi</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="Contatti.html">Contatti</a></li>
-                <li><a href="#recensioni">Recensioni</a></li>
+                <li><a href="Recensioni.html">Recensioni</a></li>
             </ul>
         </nav>
     </header>
 
 
+    <!-- Sezione Recensioni -->
+<section class="reviews-section">
+    <h2>Le Recensioni dei Nostri Clienti</h2>
+    <p>Scopri cosa dicono di noi!</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Contatti</h3>
-                <p>Telefono: DA  DEFINIRE</p>
-                <p>Email: palestrissima@gmail.com</p>
-                <p>Indirizzo: Via Giacomo Matteotti 119, Lugo (RA), Italia</p>
-            </div>
-            <div class="footer-section">
-                <h3>Link Utili</h3>
-                
-                    <p><a href="Index.html">Home</a></p>
-                    <p><a href="#chi-siamo">Chi Siamo</a></p>
-                    <p><a href="Servizi.html">Servizi</a></p>
-                    <p><a href="Contatti.html">Contatti</a></p>
-                
-            </div>
-            <div class="footer-section">
-                <h3>Social Media</h3>
-                <a href="https://www.facebook.com/profile.php?id=61555037691845" target="_blank">
-                    <i class="fab fa-facebook-f"></i>  <!-- Icona Facebook -->
-                </a>
-                
-                <a href="https://www.instagram.com/palestrissima?igsh=ajJ2bnY3cTZ2cDM=" target="_blank">
-                    <i class="fab fa-instagram"></i>  <!-- Icona Instagram -->
-                </a>
-            </div>
-    
-                <div class="footer-section">
-                    <p>&copy; 2024 Palestrissima.</p>
-                    <p>Tutti i diretti riservati.</p>
-                    <br>
-                    <a href="#privacy-policy">Privacy Policy</a> | <a href="#termini">Termini di servizio</a>
+    <div class="reviews-container" id="reviews-container">
+        <!-- Recensione 1 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="user-icon">
+                    <i class="fa-solid fa-user"></i>
                 </div>
+                <h3>Marco Rossi</h3>
+            </div>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>Ottima palestra! I trainer sono preparati e sempre disponibili. Allenamenti efficaci e personalizzati.</p>
         </div>
-    </footer>
+
+        <!-- Recensione 2 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="user-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <h3>Giulia Bianchi</h3>
+            </div>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <p>Ambiente pulito, attrezzature nuove e staff super accogliente! La consiglio a tutti.</p>
+        </div>
+
+        <!-- Recensione 3 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="user-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <h3>Andrea Verdi</h3>
+            </div>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <p>Programmi di allenamento ben strutturati. La palestra offre anche ottimi corsi di gruppo!</p>
+        </div>
+    </div>
+
+        <!-- Form per Aggiungere Recensione -->    
+    <div class="review-form-container">
+        <h3>Lascia una Recensione</h3>
+
+        <!-- Stelle Selezionabili -->
+        <div class="star-rating">
+            <input type="radio" name="rating" id="star5" value="5">
+            <label for="star5"><i class="fa-regular fa-star"></i></label>
+
+            <input type="radio" name="rating" id="star4-5" value="4.5">
+            <label for="star4-5"><i class="fa-regular fa-star-half-stroke"></i></label>
+
+            <input type="radio" name="rating" id="star4" value="4">
+            <label for="star4"><i class="fa-regular fa-star"></i></label>
+
+            <input type="radio" name="rating" id="star3-5" value="3.5">
+            <label for="star3-5"><i class="fa-regular fa-star-half-stroke"></i></label>
+
+            <input type="radio" name="rating" id="star3" value="3">
+            <label for="star3"><i class="fa-regular fa-star"></i></label>
+
+            <input type="radio" name="rating" id="star2-5" value="2.5">
+            <label for="star2-5"><i class="fa-regular fa-star-half-stroke"></i></label>
+
+            <input type="radio" name="rating" id="star2" value="2">
+            <label for="star2"><i class="fa-regular fa-star"></i></label>
+
+            <input type="radio" name="rating" id="star1-5" value="1.5">
+            <label for="star1-5"><i class="fa-regular fa-star-half-stroke"></i></label>
+
+            <input type="radio" name="rating" id="star1" value="1">
+            <label for="star1"><i class="fa-regular fa-star"></i></label>
+        </div>
+
+        <!-- Campo Nome -->
+        <input type="text" id="review-name" placeholder="Il tuo nome" required>
+
+        <!-- Campo Testo Recensione -->
+        <textarea id="review-text" placeholder="Scrivi la tua recensione..." required></textarea>
+
+        <!-- Pulsante di Invio -->
+        <button id="submit-review">Invia Recensione</button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contatti</h3>
+            <p>Telefono: DA  DEFINIRE</p>
+            <p>Email: palestrissima@gmail.com</p>
+            <p>Indirizzo: Via Giacomo Matteotti 119, Lugo (RA), Italia</p>
+        </div>
+        <div class="footer-section">
+            <h3>Link Utili</h3>
+            
+                <p><a href="Index.html">Home</a></p>
+                <p><a href="#chi-siamo">Chi Siamo</a></p>
+                <p><a href="Servizi.html">Servizi</a></p>
+                <p><a href="Contatti.html">Contatti</a></p>
+            
+        </div>
+        <div class="footer-section">
+            <h3>Social Media</h3>
+            <a href="https://www.facebook.com/profile.php?id=61555037691845" target="_blank">
+                <i class="fab fa-facebook-f"></i>  <!-- Icona Facebook -->
+            </a>
+            
+            <a href="https://www.instagram.com/palestrissima?igsh=ajJ2bnY3cTZ2cDM=" target="_blank">
+                <i class="fab fa-instagram"></i>  <!-- Icona Instagram -->
+            </a>
+        </div>
+
+            <div class="footer-section">
+                <p>&copy; 2024 Palestrissima.</p>
+                <p>Tutti i diretti riservati.</p>
+                <br>
+                <a href="#privacy-policy">Privacy Policy</a> | <a href="#termini">Termini di servizio</a>
+            </div>
+    </div>
+</footer>
     
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

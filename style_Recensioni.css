@@ -117,3 +117,189 @@ footer {
 .footer-section i:hover {
     color: #F48037;  /* Colore delle icone al passaggio del mouse */
 }
+
+/* ------------------ Sezioni pagina Recensioni ----------------------- */
+
+/* Sezione Recensioni */
+.reviews-section {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    color: #ECE9E4;
+    padding: 50px 20px;
+}
+
+/* Titolo della sezione */
+.reviews-section h2 {
+    font-size: 2.5rem;
+    color: #F48037;
+    margin-bottom: 10px;
+}
+
+.reviews-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Contenitore Recensioni */
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Singola Recensione */
+.review-box {
+    flex: 1;
+    background: rgba(56, 62, 66, 0.9);
+    padding: 20px;
+    border: 2px solid #ECE9E4; 
+    border-radius: 10px;
+    text-align: left;
+    width: 280px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.review-box:hover {
+    transform: scale(1.05);
+}
+
+/* Header della Recensione */
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Icona Font Awesome per l'Utente */
+.user-icon {
+    font-size: 2rem; /* Dimensione dell'icona */
+    color: #ECE9E4; /* Colore Sabbia */
+}
+
+/* Nome dell'Utente */
+.review-header h3 {
+    font-size: 1.2rem;
+    color: #F48037;
+    margin: 0;
+}
+
+/* Stelline */
+.stars {
+    font-size: 1.5rem;
+    color: #F48037;
+}
+
+.stars i {
+    font-size: 1.5rem;
+    color: #F48037;
+}
+
+/* Pulsante Cestino */
+.delete-review {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ECE9E4;
+    transition: color 0.3s ease;
+}
+
+.delete-review:hover {
+    color: #F48037;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-box {
+        width: 90%;
+    }
+}
+
+/* Contenitore del Form */
+.review-form-container {
+    background: rgba(56, 62, 66, 0.9);
+    padding: 20px;
+    border: 2px solid #ECE9E4;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+/* Titolo del Form */
+.review-form-container h3 {
+    font-size: 1.5rem;
+    color: #F48037;
+    margin-bottom: 15px;
+}
+
+/* Stelle Selezionabili */
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    direction: rtl; /* Inverte l'ordine per selezionare da sinistra a destra */
+    gap: 5px;
+}
+
+/* Nasconde i radio button */
+.star-rating input {
+    display: none;
+}
+
+/* Stile delle Stelle */
+.star-rating label i {
+    font-size: 2rem;
+    color: #ECE9E4;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Quando una stella è selezionata */
+.star-rating input:checked ~ label i {
+    color: #F48037;
+}
+
+/* Effetto hover */
+.star-rating label:hover i,
+.star-rating label:hover ~ label i {
+    color: #F48037;
+}
+
+/* Campi di Input */
+#review-name,
+#review-text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #F48037;
+    border-radius: 5px;
+    background: #ECE9E4;
+    color: #000;
+}
+
+/* Pulsante di Invio */
+#submit-review {
+    background: #F48037;
+    color: #ECE9E4;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+#submit-review:hover {
+    background: #E06A33;
+}

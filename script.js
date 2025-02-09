@@ -182,6 +182,116 @@ document.addEventListener('DOMContentLoaded', function () {
     dividers.forEach((divider) => observer.observe(divider));
 });
 
+/* ---------------------------- Form recensioni ----------------------------------- */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const submitButton = document.getElementById("submit-review");
+    const reviewContainer = document.querySelector(".reviews-container");
+
+    // Carica le recensioni salvate
+    loadReviews();
+
+    submitButton.addEventListener("click", function () {
+        const name = document.getElementById("review-name").value.trim();
+        const text = document.getElementById("review-text").value.trim();
+        const rating = document.querySelector('input[name="rating"]:checked');
+
+        if (!name || !text || !rating) {
+            alert("Compila tutti i campi e seleziona il numero di stelle!");
+            return;
+        }
+
+        const ratingValue = parseFloat(rating.value);
+        const starsHTML = getStarsHTML(ratingValue);
+
+        const newReview = {
+            id: Date.now(), // Identificativo unico
+            name: name,
+            text: text,
+            stars: ratingValue
+        };
+
+        // Aggiunge la recensione all'archivio locale
+        saveReview(newReview);
+
+        // Aggiunge la recensione alla pagina
+        appendReviewToPage(newReview);
+
+        // Reset del form
+        document.getElementById("review-name").value = "";
+        document.getElementById("review-text").value = "";
+        document.querySelectorAll('input[name="rating"]').forEach(radio => radio.checked = false);
+    });
+
+    // Funzione per generare le stelle
+    function getStarsHTML(ratingValue) {
+        let starsHTML = "";
+        for (let i = 1; i <= 5; i++) {
+            if (ratingValue >= i) {
+                starsHTML += '<i class="fa-solid fa-star"></i>'; // Stella piena
+            } else if (ratingValue + 0.5 === i) {
+                starsHTML += '<i class="fa-regular fa-star-half-stroke"></i>'; // Mezza stella
+            } else {
+                starsHTML += '<i class="fa-regular fa-star"></i>'; // Stella vuota
+            }
+        }
+        return starsHTML;
+    }
+
+    // Funzione per salvare la recensione nel Local Storage
+    function saveReview(review) {
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.push(review);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+    }
+
+    // Funzione per caricare le recensioni salvate
+    function loadReviews() {
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.forEach(review => appendReviewToPage(review));
+    }
+
+    // Funzione per eliminare la recensione
+    function deleteReview(id) {
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews = reviews.filter(review => review.id !== id);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+        document.getElementById(`review-${id}`).remove();
+    }
+
+    // Funzione per aggiungere la recensione alla pagina
+    function appendReviewToPage(review) {
+        const starsHTML = getStarsHTML(review.stars);
+
+        const newReview = document.createElement("div");
+        newReview.classList.add("review-box");
+        newReview.id = `review-${review.id}`;
+
+        newReview.innerHTML = `
+            <div class="review-header">
+                <div class="user-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <h3>${review.name}</h3>
+                <button class="delete-review" onclick="deleteReview(${review.id})">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+            <div class="stars">
+                ${starsHTML}
+            </div>
+            <p>${review.text}</p>
+        `;
+
+        reviewContainer.prepend(newReview);
+    }
+
+    // Rende la funzione deleteReview globale
+    window.deleteReview = deleteReview;
+});
+
+
+
 
 
 

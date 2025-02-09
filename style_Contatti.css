@@ -270,6 +270,7 @@ footer {
     flex: 1;
     background: rgba(56, 62, 66, 0.9);
     padding: 20px;
+    border: 2px solid #ECE9E4;
     border-radius: 10px;
     text-align: left;
 }
@@ -354,6 +355,7 @@ footer {
     flex: 1;
     background: rgba(56, 62, 66, 0.9);
     padding: 20px;
+    border: 2px solid #ECE9E4;
     border-radius: 10px;
     text-align: center;
     width: 250px;
