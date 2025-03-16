@@ -20,8 +20,9 @@
 
 /* Corpo e font */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Helvetica', Arial, sans-serif;
     line-height: 1.6;
+    padding-top: 75px;
 }
 
 /* Header */
@@ -32,6 +33,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* Logo */
@@ -54,9 +60,10 @@ header nav {
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-start; 
+    justify-content: center; 
     align-items: center;
     padding: 0;
+    margin: 0;
 }
 
 header nav ul li {

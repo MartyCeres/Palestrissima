@@ -20,8 +20,9 @@
 
 /* Corpo e font */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Helvetica', Arial, sans-serif;
     line-height: 1.6;
+    padding-top: 75px;
 }
 
 /* Header */
@@ -32,6 +33,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* Logo */
@@ -54,9 +60,10 @@ header nav {
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-start; 
+    justify-content: center; 
     align-items: center;
     padding: 0;
+    margin: 0;
 }
 
 header nav ul li {
@@ -123,7 +130,7 @@ header nav ul li a:hover {
 }
 
 .hero h2 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
 }
 
 .hero p {
@@ -204,52 +211,6 @@ header nav ul li a:hover {
     border-color: #F48037;
 }
 
-
-/* Testimonianze 
-.testimonianze {
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.testimonianza {
-    margin-bottom: 1.5rem;
-    font-style: italic;
-}
-*/
-
-/* Contatti 
-.contatti {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.contatti form {
-    margin-top: 20px;
-}
-
-.contatti input, .contatti textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-}
-
-.contatti button {
-    padding: 10px 20px;
-    background-color: #ff6600;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contatti button:hover {
-    background-color: #e55b00;
-}
-*/
 
 /* Footer */
 footer {
