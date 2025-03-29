@@ -769,3 +769,97 @@ main {
     align-self: stretch; /* Si estende per l'altezza completa del contenitore */
     transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Transizione lenta */
 }
+
+/* Popup di info - sfondo trasparente scuro */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Contenuto del popup con colori del sito */
+.popup-content {
+    background-color: #383E42;
+    color: #ECE9E4;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    border: 3px solid #F48037;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    animation: fadeIn 0.4s ease;
+}
+
+/* X di chiusura */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #F48037;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ECE9E4;
+}
+
+/* Pulsante Info */
+button.info-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #F48037;
+    color: #ECE9E4;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.info-button:hover {
+    background-color: #E06A33;
+}
+
+/* Titolo e paragrafo nel popup */
+.popup-content h3 {
+    font-size: 1.8rem;
+    color: #F48037;
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Stile per i link dei nomi del team */
+a.team-link {
+    color: #ECE9E4; /* Colore base bianco */
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a.team-link:hover {
+    color: #F48037 !important; /* Arancio al passaggio */
+}
+
+a.team-link:visited {
+    color: #ECE9E4; /* Resta bianco anche dopo il click */
+}
+
+
+
+

@@ -166,7 +166,17 @@ document.addEventListener('DOMContentLoaded', function () {
     dividers.forEach((divider) => observer.observe(divider));
 });
 
-/* ---------------------------- Form recensioni ----------------------------------- */
+
+function openPopup(id) {
+    document.getElementById(id).style.display = 'block';
+}
+
+function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+
+/* ---------------------------- Form recensioni ----------------------------------- 
 
 document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.getElementById("submit-review");
@@ -272,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Rende la funzione deleteReview globale
     window.deleteReview = deleteReview;
-});
+}); */
 
 /* ******************* GALLERIA ****************************************** */
 

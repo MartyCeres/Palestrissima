@@ -235,7 +235,7 @@
         </section>
     </main>
 
-    <!-- Sezione Nutrizionista, Fisioterapia, Osteopatia -->
+    <!-- Sezione Nutrizionista, Fisioterapia, Osteopatia, Chinesiologo -->
 
     <section id="health-services-section" class="health-services-section">
         <div class="health-header">
@@ -252,8 +252,26 @@
                 <h3>Fisioterapia</h3>
                 <img src="Image/fisioterapia.jpg" alt="Fisioterapia">
                 <p>Recupera la tua mobilità e riduci i dolori con trattamenti personalizzati su misura per le tue esigenze.</p>
+                <button class="info-button" onclick="openPopup('popup-fisio')">Info</button>
             </div>
-    
+
+            <!-- Popup Fisioterapia -->
+            <div id="popup-fisio" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup-fisio')">&times;</span>
+                    <h3>Fisioterapia</h3>
+                    <p>Il fisioterapista è un professionista sanitario specializzato nella prevenzione, valutazione e
+                        trattamento dei disturbi muscolo-scheletrici, neurologici e posturali. Attraverso tecniche
+                        manuali, esercizi terapeutici e terapie strumentali, aiuta a ridurre il dolore, migliorare la
+                        mobilità e favorire il recupero funzionale. Il suo intervento è indicato per sportivi, persone
+                        con patologie croniche o post-traumatiche e chiunque desideri migliorare la propria qualità di
+                        movimento e benessere generale.</p>
+                    <h3>I Nostri Fisioterapisti</h3>
+                    <p><a href="Team.html#enrico-bernardoni" class="team-link">Enrico Bernardoni</a></p>
+                    <p><a href="Team.html#nicola-balbi" class="team-link">Nicola Balbi</a></p>
+                </div>
+            </div>
+                
             <!-- Linea separatrice -->
             <div class="health-divider"></div>
     
@@ -262,6 +280,22 @@
                 <h3>Osteopatia</h3>
                 <img src="Image/Osteopatia.jpg" alt="Osteopatia">
                 <p>Trattamenti manuali mirati al riequilibrio del corpo per un benessere duraturo e completo.</p>
+                <button class="info-button" onclick="openPopup('popup-osteo')">Info</button>
+            </div>
+
+             <!-- Popup Fisioterapia -->
+             <div id="popup-osteo" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup-osteo')">&times;</span>
+                    <h3>Osteopatia</h3>
+                    <p>L’osteopata è un professionista specializzato nel trattamento manuale dei disturbi
+                        muscolo-scheletrici, viscerali e cranio-sacrali. Attraverso tecniche specifiche, mira a
+                        ripristinare l’equilibrio del corpo, migliorando la mobilità, alleviando dolori e favorendo il
+                        benessere generale. L’osteopatia è indicata per chi soffre di tensioni muscolari,
+                        problematiche posturali, disturbi articolari e per chi desidera un approccio globale alla salute.</p>
+                    <h3>La Nostra Osteopata:</h3>
+                    <p><a href="Team.html#martina-mirri" class="team-link">Martina Mirri</a></p>
+                </div>
             </div>
     
             <!-- Linea separatrice -->
@@ -270,9 +304,54 @@
             <!-- Colonna Nutrizionista -->
             <div class="column">
                 <h3>Dietista</h3>
-                <img src="Image/Nutrizionista.jpg" alt="Nutrizionista">
+                <img src="Image/Nutrizionista.jpg" alt="Dietista">
                 <p>Piani alimentari personalizzati per raggiungere i tuoi obiettivi di salute e benessere.</p>
+                <button class="info-button" onclick="openPopup('popup-diet')">Info</button>
             </div>
+
+             <!-- Popup Fisioterapia -->
+             <div id="popup-diet" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup-diet')">&times;</span>
+                    <h3>Dietista</h3>
+                    <p>Il dietista è un professionista della nutrizione che si occupa di valutare, elaborare e
+                        personalizzare piani alimentari in base alle esigenze individuali. Attraverso un approccio
+                        scientifico e basato sull’educazione alimentare, aiuta a migliorare la salute, ottimizzare la
+                        performance sportiva e gestire condizioni cliniche specifiche. Il suo supporto è essenziale
+                        per chi desidera raggiungere un equilibrio nutrizionale consapevole e sostenibile.</p>
+                    <h3>La Nostra Dietista:</h3>
+                    <p><a href="Team.html#chiara-petretti" class="team-link">Chiara Petretti</a></p>
+                </div>
+            </div>
+
+            <!-- Linea separatrice -->
+            <div class="health-divider"></div>
+
+            <!-- Colonna Chinesiologo -->
+            <div class="column">
+                <h3>Chinesiologia</h3>
+                <img src="Image/chinesiologo.jpg" alt="Chinesiologia">
+                <p>Migliora postura, mobilità e performance con sedute di chinesiologia personalizzate sulle tue esigenze.</p>
+                <button class="info-button" onclick="openPopup('popup-chine')">Info</button>
+            </div>
+
+             <!-- Popup Fisioterapia -->
+             <div id="popup-chine" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('popup-chine')">&times;</span>
+                    <h3>Chinesiologia</h3>
+                    <p>Il chinesiologo è un esperto del movimento umano, specializzato nell’applicazione
+                        dell’esercizio fisico a scopo preventivo, rieducativo e prestazionale. Attraverso protocolli
+                        personalizzati, aiuta a migliorare la postura, la mobilità e la performance fisica, intervenendo
+                        su soggetti sani, sportivi o persone con esigenze specifiche, come il recupero post-infortunio
+                        o la gestione di disfunzioni motorie. Il suo obiettivo è favorire il benessere attraverso il
+                        movimento consapevole e scientificamente strutturato.</p>
+                    <h3>I Nostri Chinesiologi:</h3>
+                    <p><a href="Team.html#francesco-balbi" class="team-link">Francesco Balbi</a></p>
+                    <p><a href="Team.html#riccardo-reali" class="team-link">Riccardo Reali</a></Riccardo></p>
+                </div>
+            </div>
+    
         </div>
     </section>
     
