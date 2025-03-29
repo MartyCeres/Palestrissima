@@ -1,0 +1,238 @@
+/* Aggiungi un font moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Definisci l'animazione di dissolvenza */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;  /* Inizia invisibile */
+    }
+    100% {
+        opacity: 1;  /* Diventa visibile */
+    }
+}
+
+/* Reset dei margini e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e font */
+body {
+    position: relative;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-color: black; /* fallback */
+    z-index: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Fisso in tutta la pagina */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Image/Logo1.png') no-repeat center center;
+    background-size: cover;
+    opacity: 50; /* livello di oscuramento */
+    filter: grayscale(100%);
+    z-index: -1; /* dietro a tutto il resto */
+}
+
+/* Header */
+header {
+    background-color: #383E42;
+    color: #ECE9E4;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo */
+header .logo {
+    margin-left: 20px;
+}
+
+header .logo img {
+    max-width: 200px;
+    height: auto;   
+}
+
+/* Navigazione */
+header nav {
+    flex-grow: 1;   /* Questo fa sì che il contenitore nav occupi lo spazio rimanente */
+    display: flex;
+    justify-content: flex-start; /* Allinea i link verso sinistra */
+    padding-left: 200px; 
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 40px;
+}
+
+header nav ul li a {
+    color: #ECE9E4;
+    text-decoration: none;
+    font-size: 1.0rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #F48037;   /* Colore al passaggio del mouse (arancio) */
+}
+
+/* Footer */
+footer {
+    background-color: #383E42; /* Colore di sfondo */
+    color: #ECE9E4; /* Colore del testo */
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
+    gap: 20px;  /* Distanza tra le colonne */
+}
+
+.footer-section {
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1rem;
+    color: #ECE9E4;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #F48037;
+}
+
+.footer-section i {
+    font-size: 2rem;  /* Imposta la dimensione dell'icona */
+    color: #ECE9E4;  /* Colore dell'icona */
+    margin: 10px;  /* Distanza tra le icone */
+    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
+}
+
+.footer-section i:hover {
+    color: #F48037;  /* Colore delle icone al passaggio del mouse */
+}
+
+/* *********************** Pagina Team ************************************************** */
+
+
+.team-section {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #ECE9E4;
+    padding: 80px 40px;
+}
+
+.team-section h2 {
+    font-size: 2.8rem;
+    color: #F48037;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.team-section p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    border-bottom: 2px solid #F48037; /* linea di separazione arancione */
+    gap: 40px;
+}
+
+.team-member:last-child {
+    border-bottom: none;
+}
+
+.team-member img {
+    width: 300px;        /* o qualsiasi valore coerente */
+    height: auto;
+    object-fit: cover;   /* mantiene le proporzioni e taglia l’eccesso */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 4px solid #F48037;
+}
+    
+.member-info {
+    width: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.member-info h3 {
+    color: #F48037;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.member-info h4 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ECE9E4;
+}
+
+.team-member.left {
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+/* Alternanza */
+.team-member.right {
+    flex-direction: row-reverse;
+    padding-left: 10%;  /* Riduce lo spazio a destra */
+    padding-right: 5%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .team-member img,
+    .member-info {
+        width: 100%;
+    }
+
+    .member-info {
+        text-align: center;
+    }
+}

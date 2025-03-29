@@ -1,19 +1,3 @@
-// Gestire l'invio del form di contatto
-/* document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    if (name && email && message) {
-        alert('Messaggio inviato con successo!');
-        document.getElementById('contactForm').reset();
-    } else {
-        alert('Per favore, compila tutti i campi!');
-    }
-}); */
-
 /* **************************************** Pagina Servizi *************************************************** */ 
 
 /* -------------- Transizione Introduzione Pagina Servizi ------------------------- */
@@ -288,6 +272,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Rende la funzione deleteReview globale
     window.deleteReview = deleteReview;
+});
+
+/* ******************* GALLERIA ****************************************** */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const galleryItems = document.querySelectorAll(".gallery-item img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.querySelector(".lightbox-img");
+    const closeBtn = document.querySelector(".close");
+
+    galleryItems.forEach(img => {
+        img.addEventListener("click", function () {
+            lightboxImg.src = this.src;
+            lightbox.classList.add("active");
+        });
+    });
+
+    closeBtn.addEventListener("click", function () {
+        lightbox.classList.remove("active");
+        lightboxImg.src = "";
+    });
 });
 
 

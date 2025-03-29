@@ -1,0 +1,203 @@
+/* Aggiungi un font moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Definisci l'animazione di dissolvenza */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;  /* Inizia invisibile */
+    }
+    100% {
+        opacity: 1;  /* Diventa visibile */
+    }
+}
+
+/* Reset dei margini e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e font */
+body {
+    font-family: 'Helvetica', Arial, sans-serif;
+    line-height: 1.6;
+    padding-top: 75px;
+}
+
+/* Header */
+header {
+    background-color: #383E42;
+    color: #ECE9E4;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo */
+header .logo {
+    margin-left: 20px;
+}
+
+header .logo img {
+    max-width: 200px;
+    height: auto;   
+}
+
+/* Navigazione */
+header nav {
+    flex-grow: 1;   /* Questo fa sì che il contenitore nav occupi lo spazio rimanente */
+    display: flex;
+    justify-content: flex-start; /* Allinea i link verso sinistra */
+    padding-left: 200px; 
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 40px;
+}
+
+header nav ul li a {
+    color: #ECE9E4;
+    text-decoration: none;
+    font-size: 1.0rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #F48037;   /* Colore al passaggio del mouse (arancio) */
+}
+
+/* Footer */
+footer {
+    background-color: #383E42; /* Colore di sfondo */
+    color: #ECE9E4; /* Colore del testo */
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
+    gap: 20px;  /* Distanza tra le colonne */
+}
+
+.footer-section {
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1rem;
+    color: #ECE9E4;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #F48037;
+}
+
+.footer-section i {
+    font-size: 2rem;  /* Imposta la dimensione dell'icona */
+    color: #ECE9E4;  /* Colore dell'icona */
+    margin: 10px;  /* Distanza tra le icone */
+    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
+}
+
+.footer-section i:hover {
+    color: #F48037;  /* Colore delle icone al passaggio del mouse */
+}
+
+/* *********************** Pagina Galleria ************************************************** */
+
+/* Sezione Galleria */
+.gallery-section {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ECE9E4;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    color: #F48037;
+    margin-bottom: 20px;
+}
+
+.gallery-section p {
+    margin-bottom: 30px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+/* Lightbox inizialmente nascosta */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Mostra la lightbox */
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 60%;        /* più piccola */
+    max-height: 60%;       /* più piccola */
+    border-radius: 10px;
+    margin-top: 60px;      /* staccata dall'header */
+    box-shadow: 0 0 20px #000;
+}
+
+.close {
+    position: absolute;
+    top: 60px;              /* sposta più in basso */
+    right: 30px;
+    font-size: 2.5rem;
+    color: #F48037;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10001;         /* molto alto per stare sopra all'header */
+}
+
