@@ -347,27 +347,33 @@ footer {
     margin-bottom: 30px;
 }
 
-/* Contenitore delle Box Social */
+/* Container dei box social */
 .social-container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centra i box orizzontalmente */
     gap: 30px;
     flex-wrap: wrap;
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* Singola Box Social */
+/* Box individuale */
 .social-box {
-    flex: 1;
     background: rgba(56, 62, 66, 0.9);
     padding: 20px;
     border: 2px solid #ECE9E4;
     border-radius: 10px;
     text-align: center;
-    width: 250px;
+    width: 280px; /* Fisso, per mantenere larghezza uniforme */
     transition: transform 0.3s ease-in-out;
 }
+
+@media (max-width: 600px) {
+    .social-box {
+        width: 100%; /* Su mobile le box occupano tutta la larghezza */
+    }
+}
+
 
 .social-box:hover {
     transform: scale(1.05);
