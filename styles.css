@@ -255,3 +255,188 @@ footer {
 .footer-section i:hover {
     color: #F48037;  /* Colore delle icone al passaggio del mouse */
 }
+
+/* Media Queries per dispositivi mobili */
+
+/* Header - Menu di navigazione su tre colonne */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0; /* Rimuovi il padding-left e mantieni solo il padding verticale */
+    }
+
+    /* Menu di navigazione */
+    header nav {
+        display: flex;
+        justify-content: center; /* Centra il menu */
+        align-items: center;
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    header nav ul {
+        list-style: none;
+        display: grid; /* Usa grid per disporre i link in colonne */
+        grid-template-columns: repeat(3, 1fr); /* Tre colonne con larghezza uguale */
+        gap: 15px; /* Aggiungi spazio tra le colonne */
+        padding: 0;
+        margin: 0;
+        text-align: center; /* Centra il testo all'interno dei link */
+    }
+
+    header nav ul li {
+        margin: 0; /* Rimuovi margini extra tra gli elementi */
+    }
+
+    header nav ul li a {
+        font-size: 1rem; /* Mantieni la dimensione dei link */
+        color: #ECE9E4;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+        color: #F48037; /* Colore al passaggio del mouse */
+    }
+
+    .logo img {
+        max-width: 110px !important; /* Riduce la dimensione del logo */
+    }
+}
+
+
+
+/* Rimuovere spazio bianco in eccesso in alto */
+body {
+    margin-top: 0; /* Elimina il margine superiore */
+    padding-top: 0; /* Elimina il padding superiore */
+}
+
+
+/* Sezione Hero - Aggiungi adattamenti per schermi piccoli */
+@media (max-width: 768px) {
+    .hero {
+        background-position: center center;
+        background-size: cover;
+        height: auto; /* Rende l'altezza dinamica */
+        display: flex;
+        justify-content: center; /* Centra orizzontalmente */
+        align-items: center; /* Centra verticalmente */
+        flex-direction: column; /* Organizza il contenuto in colonna */
+    }
+
+    .hero h2 {
+        font-size: 2rem; /* Riduce la dimensione del testo */
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 1rem; /* Riduce la dimensione del paragrafo */
+    }
+
+    .hero-content {
+        max-width: 90%; /* Riduce la larghezza del contenuto */
+        padding-left: 0; /* Rimuove il padding sinistro */
+        text-align: center; /* Centra il testo */
+        padding-top: 30px;
+    }
+    
+    .button {
+        width: 100%; /* Fa occupare al pulsante tutta la larghezza */
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Sezione Servizi - Modifica layout delle card */
+@media (max-width: 768px) {
+    .servizi {
+        padding: 40px 10px; /* Riduce il padding laterale */
+    }
+
+    .card-container {
+        flex-direction: column; /* Colonna unica per le card */
+        gap: 30px; /* Aggiungi spazio tra le card */
+        width: 100%; /* Fa sì che le card occupino tutta la larghezza */
+    }
+
+    .card {
+        width: 100%; /* Fa sì che ogni card occupi tutta la larghezza */
+        margin: 0; /* Rimuove il margine tra le card */
+    }
+    
+    .card img {
+        height: 180px; /* Riduce l'altezza delle immagini */
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .card-button {
+        font-size: 1rem;
+    }
+}
+
+/* Footer - Adattamento per dispositivi mobili */
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column; /* Imposta il footer in colonna */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-section {
+        text-align: center; /* Centra il contenuto nel footer */
+        width: 100%;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-section p, .footer-section a {
+        font-size: 0.9rem;
+    }
+    
+    .footer-section i {
+        font-size: 1.5rem; /* Riduce la dimensione delle icone */
+        margin: 5px;
+    }
+}
+
+/* Aggiunta di un layout mobile per schermi più piccoli */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Riduce la dimensione del testo su schermi molto piccoli */
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem; /* Riduce ulteriormente la dimensione del testo hero */
+    }
+    
+    .hero p {
+        font-size: 1rem; /* Riduce la dimensione del testo */
+    }
+
+    .button {
+        padding: 10px 20px; /* Rende il pulsante più piccolo */
+        font-size: 1rem;
+    }
+
+    .card img {
+        height: 150px; /* Riduce ulteriormente l'altezza dell'immagine */
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+    }
+}
