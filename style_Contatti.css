@@ -393,8 +393,11 @@ footer {
     .contact-container {
         flex-direction: column;
     }
+ 
+    .contact-section {
+        margin-top: 80px;
+    }
 }
-
 
 @media (max-width: 768px) {
     .contact-map-wrapper {
