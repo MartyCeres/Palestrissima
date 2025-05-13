@@ -210,14 +210,6 @@ footer {
     margin: 0;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-}
-
-
 /* -------------- Sezione Mappa ------------------------------ */
 /* Sezione Generale */
 .contact-map-section {
@@ -311,20 +303,6 @@ footer {
     background: #E06A33;
 }
 
-
-
-@media (max-width: 768px) {
-    .contact-map-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contact-info-box {
-        text-align: center;
-        padding: 15px;
-    }
-}
-
 /* -------------- Sezione Social ------------------------------ */
 
 /* Sezione Social */
@@ -368,13 +346,6 @@ footer {
     transition: transform 0.3s ease-in-out;
 }
 
-@media (max-width: 600px) {
-    .social-box {
-        width: 100%; /* Su mobile le box occupano tutta la larghezza */
-    }
-}
-
-
 .social-box:hover {
     transform: scale(1.05);
 }
@@ -415,4 +386,116 @@ footer {
     width: 100px;
     margin-top: 15px;
     border-radius: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contact-map-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info-box {
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .social-box {
+        width: 100%; /* Su mobile le box occupano tutta la larghezza */
+    }
+}
+
+/* ############################### Rimuovi lo Scorrimento Orizzontale ############################### */
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden; /* Impedisce lo scorrimento orizzontale */
+    }
+
+    body {
+        margin-top: 0; /* Elimina il margine superiore */
+        padding-top: 0; /* Elimina il padding superiore */
+    }
+}
+
+/* ############################### Header Responsivo ############################### */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0;
+        
+    }
+
+    header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    header nav ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 0;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;
+        color: #ECE9E4;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+        color: #F48037;
+    }
+
+    .logo img {
+        max-width: 120px !important;
+    }
+}
+
+/* ############################### Responsivo per il Footer ############################### */
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-section {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 1rem;
+    }
+
+    .footer-section i {
+        font-size: 1.5rem;
+        margin: 5px;
+    }
 }
