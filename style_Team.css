@@ -143,7 +143,6 @@ footer {
 
 /* *********************** Pagina Team ************************************************** */
 
-
 .team-section {
     width: 100%;
     background: rgba(0, 0, 0, 0.9);
@@ -221,18 +220,143 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .team-member {
-        flex-direction: column !important;
-        text-align: center;
-        padding: 0 20px;
+    .team-section {
+        padding: 40px 20px;
+        margin-top: 80px;
     }
 
-    .team-member img,
+    .team-section h2 {
+        font-size: 2rem;
+    }
+
+    .team-section p {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .team-member {
+        flex-direction: column; /* Da riga a colonna */
+        align-items: center;
+        padding: 15px 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .team-member.right {
+        flex-direction: column; /* Anche quelle alternate diventano colonna */
+    }
+
+    .team-member img {
+        width: 60%;
+        max-width: 300px;
+    }
+
     .member-info {
+        width: 100%;
+        padding: 0;
+    }
+
+    .member-info h3 {
+        font-size: 1.7rem;
+        margin-bottom: 8px;
+    }
+
+    .member-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .team-member.left,
+    .team-member.right {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+/* ############################### Rimuovi lo Scorrimento Orizzontale ############################### */
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden; /* Impedisce lo scorrimento orizzontale */
+    }
+
+    body {
+        margin-top: 0; /* Elimina il margine superiore */
+        padding-top: 0; /* Elimina il padding superiore */
+    }
+}
+
+/* ############################### Header Responsivo ############################### */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0;
+        
+    }
+
+    header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    header nav ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 0;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;
+        color: #ECE9E4;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+        color: #F48037;
+    }
+
+    .logo img {
+        max-width: 120px !important;
+    }
+}
+
+/* ############################### Responsivo per il Footer ############################### */
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-section {
+        text-align: center;
         width: 100%;
     }
 
-    .member-info {
-        text-align: center;
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 1rem;
+    }
+
+    .footer-section i {
+        font-size: 1.5rem;
+        margin: 5px;
     }
 }
+
