@@ -992,7 +992,7 @@ a.team-link:visited {
 @media (max-width: 768px) {
     .card-sm-slider {
         flex-direction: row; /* mantieni orizzontale */
-        overflow-x: hidden;  /* nascondi scroll */
+        overflow-x: auto;  /* nascondi scroll */
         scroll-snap-type: x mandatory; /* snapping */
         width: 100%;
     }
