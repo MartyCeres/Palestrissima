@@ -1,3 +1,7 @@
+/* ==========================================
+   1. IMPORT E REGOLE GENERALI (RESET & BODY)
+   ========================================== */
+
 /* Aggiungi un font moderno */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
@@ -24,6 +28,16 @@ body {
     line-height: 1.6;
     padding-top: 75px;
 }
+
+/* Blocca lo scroll dell'intera pagina quando il popup è aperto */
+body.no-scroll {
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   2. HEADER E NAVIGAZIONE
+   ========================================== */
 
 /* Header */
 header {
@@ -57,6 +71,7 @@ header nav {
     justify-content: flex-start; /* Allinea i link verso sinistra */
     padding-left: 200px; 
 }
+
 header nav ul {
     list-style: none;
     display: flex;
@@ -81,49 +96,10 @@ header nav ul li a:hover {
     color: #F48037;   /* Colore al passaggio del mouse (arancio) */
 }
 
-/* Footer */
-footer {
-    background-color: #383E42; /* Colore di sfondo */
-    color: #ECE9E4; /* Colore del testo */
-    padding: 40px 0;
-}
 
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
-    gap: 20px;  /* Distanza tra le colonne */
-}
-
-.footer-section {
-    padding: 10px;
-}
-
-.footer-section h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.footer-section p,
-.footer-section a {
-    font-size: 1rem;
-    color: #ECE9E4;
-    text-decoration: none;
-}
-
-.footer-section a:hover {
-    color: #F48037;
-}
-
-.footer-section i {
-    font-size: 2rem;  /* Imposta la dimensione dell'icona */
-    color: #ECE9E4;  /* Colore dell'icona */
-    margin: 10px;  /* Distanza tra le icone */
-    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
-}
-
-.footer-section i:hover {
-    color: #F48037;  /* Colore delle icone al passaggio del mouse */
-}
+/* ==========================================
+   3. CONTENUTI PAGINA SERVIZI
+   ========================================== */
 
 /* ------------ Pagina Web Servizi ------------------------------------------- */
 
@@ -206,7 +182,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Image/people-training-together-with-weight-lifting.jpg') no-repeat center center; /* Sostituisci con il percorso della tua immagine */
+    background: url('Image/OneToOne.webp') no-repeat center center; /* Sostituisci con il percorso della tua immagine */
     background-size: cover;
     filter: grayscale(100%); /* Rende l'immagine in bianco e nero */
     z-index: -1; /* Porta l'immagine sullo sfondo */
@@ -491,8 +467,6 @@ footer {
     transform: translateY(0); /* Torna alla posizione originale */
 }
 
-
-
 /* Inizio sezione per lo stile */
 .intro-section {
     text-align: center;
@@ -512,7 +486,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Image/Sfondo\ servizi.jpg') no-repeat center center; /* Sostituisci con il percorso della tua immagine */
+    background: url('Image/Sfondo\ servizi.webp') no-repeat center center; /* Sostituisci con il percorso della tua immagine */
     background-size: cover;
     filter: grayscale(100%); /* Rende l'immagine in bianco e nero */
     z-index: -1; /* Porta l'immagine sullo sfondo */
@@ -678,7 +652,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Image/health-section-intro.jpg') no-repeat center center;
+    background: url('Image/TrustTheProcess.webp') no-repeat center center;
     background-size: cover;
     filter: grayscale(100%); /* Rende l'immagine in bianco e nero */
     z-index: -1; /* Porta l'immagine sullo sfondo */
@@ -734,29 +708,22 @@ main {
     margin-bottom: 20px;
 }
 
-/* Immagini */
-.column img {
+/* Gestione immagini verticali nella sezione Benessere / Salute */
+.health-services-section .column img {
     width: 100%;
-    max-width: 300px; /* Dimensione massima delle immagini */
-    height: auto;
-    filter: grayscale(100%); /* Applica il filtro bianco e nero */
+    max-width: 100%;
+    height: 280px;            /* Puoi regolare quest'altezza in base a quanto vuoi farle grandi */
+    object-fit: contain;      /* Mantiene l'immagine INTERA senza tagliarla */
+    object-position: center;  /* Centra l'immagine all'interno della colonna */
+    display: block;
+    margin: 0 auto 15px auto; /* Centrata orizzontalmente con margine in basso dal testo */
+    background: transparent;  /* Nessun colore di sfondo */
+    filter: grayscale(100%);  /* Applica il filtro bianco e nero */
     transition: filter 0.3s ease; /* Transizione del colore */
-    margin: 15px 0;
 }
 
 .column:hover img {
     filter: grayscale(0%); /* Rimuove il filtro bianco e nero */
-}
-
-/* Linea separatrice */
-.health-divider {
-    width: 5px; /* Larghezza della linea */
-    height: auto; /* Altezza uguale a quella delle colonne */
-    background: #F48037; /* Colore arancione */
-    margin: 0 20px; /* Spazio orizzontale tra le colonne */
-    display: block; /* Rende la linea visibile tra le colonne */
-    min-height: 100%; /* Assicura che occupi l'altezza del contenitore */
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Transizione lenta */
 }
 
 /* Linea separatrice */
@@ -769,6 +736,11 @@ main {
     align-self: stretch; /* Si estende per l'altezza completa del contenitore */
     transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Transizione lenta */
 }
+
+
+/* ==========================================
+   4. POPUP & MODALI
+   ========================================== */
 
 /* Popup di info - sfondo trasparente scuro */
 .popup {
@@ -792,10 +764,35 @@ main {
     border-radius: 10px;
     width: 80%;
     max-width: 700px;
+    max-height: 80vh;           /* Impedisce al popup di uscire dallo schermo */
+    overflow-y: auto;           /* Attiva lo scroll se il contenuto è lungo */
+    overscroll-behavior: contain; /* Impedisce di muovere la pagina principale */
     border: 3px solid #F48037;
     font-family: 'Poppins', sans-serif;
     position: relative;
     animation: fadeIn 0.4s ease;
+}
+
+/* Personalizzazione barra di scorrimento interna al popup */
+.popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #2a2d30;
+    border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #F48037;
+    border-radius: 4px;
+}
+
+.popup-content h4 {
+    font-size: 1.4rem;
+    color: #F48037;
+    margin: 20px 0 10px 0;
+    text-align: center;
 }
 
 /* X di chiusura */
@@ -860,369 +857,243 @@ a.team-link:visited {
     color: #ECE9E4; /* Resta bianco anche dopo il click */
 }
 
-/* ############################### Rimuovi lo Scorrimento Orizzontale ############################### */
+/* Griglia centrata con pallini e testi perfettamente allineati */
+.popup-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
+    list-style: none;
+    padding: 0;
+    margin: 15px auto 25px auto;
+    max-width: 500px;                  /* Centra l'intero blocco dei servizi */
+}
+
+.popup-services-grid li {
+    position: relative;
+    padding-left: 22px;                /* Spazio fisso e pulito per il pallino */
+    text-align: left;                  /* Allinea il testo sulla stessa linea */
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #e0e0e0;
+}
+
+/* Pallino in posizione fissa e allineata per tutti gli elementi */
+.popup-services-grid li::before {
+    content: "•";
+    color: #F48037;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Logo della certificazione leggermente più grande ed integrato nel testo */
+.cert-logo {
+    height: 32px;              /* Portato da 24px a 32px per renderlo un po' più grande */
+    width: auto;               /* Mantiene la proporzione dell'immagine */
+    vertical-align: middle;    /* Allinea al centro verticale con la scritta */
+    margin-left: 8px;          /* Spazio dal nome */
+    display: inline-block;
+}
+
+
+/* ==========================================
+   5. FOOTER
+   ========================================== */
+
+/* Footer */
+footer {
+    background-color: #383E42; /* Colore di sfondo */
+    color: #ECE9E4; /* Colore del testo */
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
+    gap: 20px;  /* Distanza tra le colonne */
+}
+
+.footer-section {
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1rem;
+    color: #ECE9E4;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #F48037;
+}
+
+.footer-section i {
+    font-size: 2rem;  /* Imposta la dimensione dell'icona */
+    color: #ECE9E4;  /* Colore dell'icona */
+    margin: 10px;  /* Distanza tra le icone */
+    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
+}
+
+.footer-section i:hover {
+    color: #F48037;  /* Colore delle icone al passaggio del mouse */
+}
+
+
+/* ==========================================
+   6. STILI RESPONSIVE MOBILE (@media)
+   ========================================== */
+
 @media (max-width: 768px) {
-    body, html {
-        overflow-x: hidden; /* Impedisce lo scorrimento orizzontale */
+    /* Header & Navigazione Mobile */
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+        position: relative; /* Evita sovrapposizioni fisse con l'inizio pagina */
     }
 
     body {
-        margin-top: 0; /* Elimina il margine superiore */
-        padding-top: 0; /* Elimina il padding superiore */
+        padding-top: 0;
     }
-}
 
-/* ############################### Header Responsivo ############################### */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem 0;
-        
+    header .logo {
+        margin-left: 0;
+        margin-bottom: 10px;
     }
 
     header nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
         padding-left: 0;
+        width: 100%;
+        justify-content: center;
     }
 
     header nav ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        flex-wrap: wrap;
         gap: 10px;
-        padding: 0;
-        margin: 0;
-        text-align: center;
     }
 
     header nav ul li {
-        margin: 0;
+        margin: 0 10px;
     }
 
-    header nav ul li a {
-        font-size: 1rem;
-        color: #ECE9E4;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    header nav ul li a:hover {
-        color: #F48037;
-    }
-
-    .logo img {
-        max-width: 120px !important;
-    }
-}
-
-/* ############################### Responsive per .intro-service ############################### */
-@media (max-width: 768px) {
-    .intro-service {
-        padding: 40px 15px; /* Riduce il padding laterale */
-        margin-top: 75px;   /* Compensa l'header fisso */
-    }
-
+    /* Sezione Intro & Testi */
     .intro-service-content {
-        flex-direction: column; /* Layout verticale */
-        align-items: center;
+        flex-direction: column;
         text-align: center;
     }
 
-    .intro-service-image {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .intro-service-image img {
-        max-width: 200px;
-        height: auto;
-        margin: 0 auto;
-    }
-
     .intro-service-text {
-        width: 100%;
         text-align: center;
     }
 
     .intro-service-text h1 {
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-        margin-bottom: 15px;
-    }
-
-    .intro-service-text h3 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-    }
-
-    .intro-service-text p {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 10px;
-    }
-}
-
-
-/* ############################### Sezione One to One ############################### */
-@media (max-width: 768px) {
-    .one-to-one-section {
-        padding: 30px 20px;
-    }
-
-    .one-to-one-section h2 {
         font-size: 2rem;
     }
 
-    .one-to-one-section p {
-        font-size: 1rem;
+    .intro-service-text h3 {
+        font-size: 1.4rem;
     }
 
-    .benefits-list li {
-        font-size: 1rem;
+    .one-to-one-section h2,
+    .small-group-section h2,
+    .intro-section h2,
+    .health-header h2 {
+        font-size: 2rem;
     }
 
-    .cta-button {
-        font-size: 1rem;
-        padding: 10px 20px;
+    /* Slider Small Group */
+    .slider-container {
+        padding: 0 10px;
     }
-}
 
-@media (max-width: 768px) {
     .card-sm-slider {
-        flex-direction: row; /* mantieni orizzontale */
-        overflow-x: auto;  /* nascondi scroll */
-        scroll-snap-type: x mandatory; /* snapping */
         width: 100%;
     }
 
     .card-sm {
-        flex: 0 0 100%; /* mostra una card alla volta */
+        flex: 0 0 100%;
         max-width: 100%;
-        scroll-snap-align: start;
     }
 
-    .arrowsm-left,
-    .arrowsm-right {
-        display: block; /* assicurati che le frecce siano visibili */
-    }
-}
-
-
-/* ############################### Sezione Percorsi Personalizzati ############################### */
-@media (max-width: 768px) {
-    .intro-section {
-        padding: 30px 15px;
-    }
-
-    .intro-section h2 {
-        font-size: 2.2rem;
-    }
-
-    .intro-section p {
-        font-size: 1rem;
-    }
-
-    .highlight {
-        font-size: 1.1rem;
-    }
-
-    .subtitle,
-    .main-title {
-        font-size: 1.8rem;
-    }
-
+    /* Tabelle Servizi Online Mobile */
     .service-table {
         width: 100%;
-        font-size: 1rem;
-        overflow-x: auto; /* Aggiunge una barra di scorrimento orizzontale per le tabelle larghe */
+        font-size: 0.95rem;
     }
 
     .service-table td {
-        padding: 10px; /* Riduce il padding per adattarsi meglio */
-    }
-}
-
-/* ############################### Sezione Fisioterapista, Osteopatia, e Altri Servizi ############################### */
-@media (max-width: 768px) {
-    .health-services-section {
-        padding: 30px 15px;
+        padding: 8px;
     }
 
+    .main-title {
+        font-size: 1.8rem;
+        letter-spacing: 4px;
+    }
+
+    /* Sezione Salute / Benessere Mobile (Forzatura visibilità e colori originali) */
     .health-services-columns {
-        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px; /* Maggiore spazio tra le colonne */
-    }
-
-    .health-services-section h2, .health-services-section p {
-        opacity: 1;
     }
 
     .column {
-        width: 100%;
-        padding: 0;
-        text-align: center;
-        opacity: 1; /* Imposta l'opacità su 1 per mostrare i contenuti */
-        transform: translateY(0); /* Riporta la posizione normale */
-        transition: opacity 1s ease, transform 1s ease; /* Aggiungi la transizione */
+        opacity: 1 !important;
+        transform: none !important;
+        margin-bottom: 25px;
     }
 
+    .health-services-section h2,
     .column h3 {
-        font-size: 1.5rem;
+        opacity: 1 !important;
+        transform: none !important;
+        color: #F48037 !important; /* Arancio originale del sito */
     }
 
+    .health-services-section p,
+    .health-header p,
     .column p {
-        font-size: 1rem;
-        padding: 0 10px;
+        opacity: 1 !important;
+        transform: none !important;
+        color: #ECE9E4 !important; /* Panna/grigio chiaro originale del sito */
     }
 
-    .column img {
-        width: 90%;
-        height: auto;
-        max-width: 300px;
-        margin: 15px auto;
-        display: block;
-    }
-
-    /* Nascondi la linea separatrice verticale nel responsive */
     .health-divider {
-        display: none;
+        width: 80%;
+        height: 3px;
+        min-height: 3px;
+        align-self: center;
+        margin: 20px 0;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
-    /* Animazione per la visibilità delle colonne */
-    .column.visible {
-        opacity: 1;
-        transform: translateY(0);
+    .health-services-section .column img {
+        height: 220px;
     }
 
-    /* Opacità iniziale delle colonne */
-    .column:not(.visible) {
-        opacity: 0;
-        transform: translateY(20px); /* Le colonne sono spostate verso il basso inizialmente */
-    }
-}
-
-/* ############################### Responsivo per il Popup ############################### */
-@media (max-width: 768px) {
-    /* Popup - generale */
-    .popup {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 90px;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* Sfondo scuro semi-trasparente */
-        overflow: auto;
-        transition: opacity 0.3s ease;
-    }
-
-    /* Contenuto del popup */
+    /* Popup Mobile */
     .popup-content {
-        background-color: #383E42;
-        color: #ECE9E4;
-        margin: 20px auto;
-        padding: 30px;
-        border-radius: 10px;
         width: 90%;
-        max-width: 500px;
-        max-height: 80vh;
-        overflow-y: auto;
-        border: 3px solid #F48037;
-        position: relative;
-        transition: max-height 0.3s ease-in-out;
-        box-sizing: border-box; /* Include il padding nel calcolo della larghezza */
+        margin: 40px auto;
+        padding: 20px;
     }
 
-    /* Chiusura */
-    .close {
-        font-size: 28px;
-        font-weight: bold;
-        color: #F48037;
-        position: absolute;
-        top: 10px;
-        right: 14px;
-        cursor: pointer;
-        transition: color 0.3s ease;
+    .popup-services-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
-    .close:hover {
-        color: #ECE9E4;
-    }
-
-    /* Titolo popup */
-    .popup-content h3 {
-        font-size: 1.3rem;
-        color: #F48037;
-        margin-bottom: 15px;
-        word-wrap: break-word;
-        padding-top: 10px;
-    }
-
-    /* Paragrafo popup */
-    .popup-content p {
-        font-size: 1rem;
-        line-height: 1.6;
-        word-wrap: break-word;
-    }
-
-    /* Pulsante info */
-    button.info-button {
-        font-size: 0.95rem;
-        padding: 8px 16px;
-        background-color: #F48037;
-        color: #ECE9E4;
-        border: none;
-        border-radius: 6px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    button.info-button:hover {
-        background-color: #E06A33;
-    }
-
-    /* Animazione di apertura */
-    .popup.show {
-        opacity: 1;
-    }
-}
-
-/* Popup visibile quando attivato */
-.popup.show {
-    display: block;
-}
-
-/* ############################### Responsivo per il Footer ############################### */
-@media (max-width: 768px) {
+    /* Footer Mobile */
     .footer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .footer-section {
+        grid-template-columns: 1fr;
         text-align: center;
-        width: 100%;
-    }
-
-    .footer-section h3 {
-        font-size: 1.2rem;
-    }
-
-    .footer-section p,
-    .footer-section a {
-        font-size: 1rem;
-    }
-
-    .footer-section i {
-        font-size: 1.5rem;
-        margin: 5px;
+        padding: 0 20px;
     }
 }

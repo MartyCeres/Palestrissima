@@ -1,3 +1,7 @@
+/* ==========================================
+   1. IMPORT E REGOLE GENERALI (RESET & BODY)
+   ========================================== */
+
 /* Aggiungi un font moderno */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
@@ -24,6 +28,11 @@ body {
     line-height: 1.6;
     padding-top: 75px;
 }
+
+
+/* ==========================================
+   2. HEADER E NAVIGAZIONE
+   ========================================== */
 
 /* Header */
 header {
@@ -57,6 +66,7 @@ header nav {
     justify-content: flex-start; /* Allinea i link verso sinistra */
     padding-left: 200px; 
 }
+
 header nav ul {
     list-style: none;
     display: flex;
@@ -81,49 +91,10 @@ header nav ul li a:hover {
     color: #F48037;   /* Colore al passaggio del mouse (arancio) */
 }
 
-/* Footer */
-footer {
-    background-color: #383E42; /* Colore di sfondo */
-    color: #ECE9E4; /* Colore del testo */
-    padding: 40px 0;
-}
 
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
-    gap: 20px;  /* Distanza tra le colonne */
-}
-
-.footer-section {
-    padding: 10px;
-}
-
-.footer-section h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.footer-section p,
-.footer-section a {
-    font-size: 1rem;
-    color: #ECE9E4;
-    text-decoration: none;
-}
-
-.footer-section a:hover {
-    color: #F48037;
-}
-
-.footer-section i {
-    font-size: 2rem;  /* Imposta la dimensione dell'icona */
-    color: #ECE9E4;  /* Colore dell'icona */
-    margin: 10px;  /* Distanza tra le icone */
-    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
-}
-
-.footer-section i:hover {
-    color: #F48037;  /* Colore delle icone al passaggio del mouse */
-}
+/* ==========================================
+   3. SEZIONE GALLERIA E LIGHTBOX
+   ========================================== */
 
 /* *********************** Pagina Galleria ************************************************** */
 
@@ -174,7 +145,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
-    z-index: 10010;
+    z-index: 999;
 }
 
 /* Mostra la lightbox */
@@ -201,123 +172,131 @@ footer {
     z-index: 10001;         /* molto alto per stare sopra all'header */
 }
 
-/* ############################### Rimuovi lo Scorrimento Orizzontale ############################### */
+/* Blocca lo scroll del body quando la lightbox è aperta */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* ==========================================
+   4. FOOTER
+   ========================================== */
+
+/* Footer */
+footer {
+    background-color: #383E42; /* Colore di sfondo */
+    color: #ECE9E4; /* Colore del testo */
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
+    gap: 20px;  /* Distanza tra le colonne */
+}
+
+.footer-section {
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1rem;
+    color: #ECE9E4;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #F48037;
+}
+
+.footer-section i {
+    font-size: 2rem;  /* Imposta la dimensione dell'icona */
+    color: #ECE9E4;  /* Colore dell'icona */
+    margin: 10px;  /* Distanza tra le icone */
+    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
+}
+
+.footer-section i:hover {
+    color: #F48037;  /* Colore delle icone al passaggio del mouse */
+}
+
+
+/* ==========================================
+   5. STILI RESPONSIVE MOBILE (@media)
+   ========================================== */
+
 @media (max-width: 768px) {
-    body, html {
-        overflow-x: hidden; /* Impedisce lo scorrimento orizzontale */
+    /* Header & Navigazione Mobile */
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+        position: relative; /* Evita sovrapposizioni con l'inizio della galleria */
     }
 
     body {
-        margin-top: 0; /* Elimina il margine superiore */
-        padding-top: 0; /* Elimina il padding superiore */
+        padding-top: 0;
     }
-}
 
-/* ############################### Header Responsivo ############################### */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem 0;
-        
+    header .logo {
+        margin-left: 0;
+        margin-bottom: 10px;
     }
 
     header nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
         padding-left: 0;
+        width: 100%;
+        justify-content: center;
     }
 
     header nav ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        flex-wrap: wrap;
         gap: 10px;
-        padding: 0;
-        margin: 0;
-        text-align: center;
     }
 
     header nav ul li {
-        margin: 0;
+        margin: 0 10px;
     }
 
-    header nav ul li a {
-        font-size: 1rem;
-        color: #ECE9E4;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    header nav ul li a:hover {
-        color: #F48037;
-    }
-
-    .logo img {
-        max-width: 120px !important;
-    }
-}
-
-/* ############################### Responsivo per il Footer ############################### */
-@media (max-width: 768px) {
-    .footer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .footer-section {
-        text-align: center;
-        width: 100%;
-    }
-
-    .footer-section h3 {
-        font-size: 1.2rem;
-    }
-
-    .footer-section p,
-    .footer-section a {
-        font-size: 1rem;
-    }
-
-    .footer-section i {
-        font-size: 1.5rem;
-        margin: 5px;
-    }
-}
-
-/* ############################### Responsivo per la Galleria ############################### */
-
-@media (max-width: 768px) {
+    /* Galleria Mobile */
     .gallery-section {
         padding: 30px 15px;
-        margin-top: 80px;
     }
 
     .gallery-section h2 {
         font-size: 2rem;
+        color: #F48037 !important;
     }
 
     .gallery-section p {
-        font-size: 1rem;
+        color: #ECE9E4 !important;
     }
 
     .gallery-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* più piccole su mobile */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Griglia ottimizzata per schermi piccoli */
         gap: 10px;
     }
 
+    /* Lightbox Mobile */
     .lightbox-img {
-        max-width: 85%;         /* più stretta */
-        max-height: 60vh;       /* più bassa */
-        margin-top: 50px;       /* più spazio dall'alto */
+        max-width: 90%;
+        max-height: 80%;
+        margin-top: 0;
     }
 
     .close {
-        top: 10px;
-        right: 10px;
-        font-size: 2rem;
-        z-index: 10001;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* Footer Mobile */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 20px;
     }
 }

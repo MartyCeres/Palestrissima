@@ -168,11 +168,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function openPopup(id) {
-    document.getElementById(id).style.display = 'block';
+    const popup = document.getElementById(id);
+    if (popup) {
+        popup.style.display = 'block';
+        document.body.classList.add('no-scroll'); // Blocca lo scroll di tutta la pagina
+    }
 }
 
 function closePopup(id) {
-    document.getElementById(id).style.display = 'none';
+    const popup = document.getElementById(id);
+    if (popup) {
+        popup.style.display = 'none';
+        document.body.classList.remove('no-scroll'); // Ripristina lo scroll della pagina
+    }
 }
 
 
@@ -296,12 +304,14 @@ document.addEventListener("DOMContentLoaded", function () {
         img.addEventListener("click", function () {
             lightboxImg.src = this.src;
             lightbox.classList.add("active");
+            document.body.classList.add("no-scroll");
         });
     });
 
     closeBtn.addEventListener("click", function () {
         lightbox.classList.remove("active");
         lightboxImg.src = "";
+        document.body.classList.remove("no-scroll");
     });
 });
 

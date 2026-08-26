@@ -1,3 +1,7 @@
+/* ==========================================
+   1. IMPORT E REGOLE GENERALI (RESET & BODY)
+   ========================================== */
+
 /* Aggiungi un font moderno */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
@@ -24,6 +28,11 @@ body {
     line-height: 1.6;
     padding-top: 75px;
 }
+
+
+/* ==========================================
+   2. HEADER E NAVIGAZIONE
+   ========================================== */
 
 /* Header */
 header {
@@ -57,6 +66,7 @@ header nav {
     justify-content: flex-start; /* Allinea i link verso sinistra */
     padding-left: 200px; 
 }
+
 header nav ul {
     list-style: none;
     display: flex;
@@ -81,49 +91,10 @@ header nav ul li a:hover {
     color: #F48037;   /* Colore al passaggio del mouse (arancio) */
 }
 
-/* Footer */
-footer {
-    background-color: #383E42; /* Colore di sfondo */
-    color: #ECE9E4; /* Colore del testo */
-    padding: 40px 0;
-}
 
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
-    gap: 20px;  /* Distanza tra le colonne */
-}
-
-.footer-section {
-    padding: 10px;
-}
-
-.footer-section h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.footer-section p,
-.footer-section a {
-    font-size: 1rem;
-    color: #ECE9E4;
-    text-decoration: none;
-}
-
-.footer-section a:hover {
-    color: #F48037;
-}
-
-.footer-section i {
-    font-size: 2rem;  /* Imposta la dimensione dell'icona */
-    color: #ECE9E4;  /* Colore dell'icona */
-    margin: 10px;  /* Distanza tra le icone */
-    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
-}
-
-.footer-section i:hover {
-    color: #F48037;  /* Colore delle icone al passaggio del mouse */
-}
+/* ==========================================
+   3. CONTENUTI PAGINA CONTATTI
+   ========================================== */
 
 /* ------------ Pagina Web Contatti ------------------------------------------- */
 
@@ -211,6 +182,7 @@ footer {
 }
 
 /* -------------- Sezione Mappa ------------------------------ */
+
 /* Sezione Generale */
 .contact-map-section {
     text-align: center;
@@ -388,117 +360,134 @@ footer {
     border-radius: 5px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
- 
-    .contact-section {
-        margin-top: 80px;
-    }
+
+/* ==========================================
+   4. FOOTER
+   ========================================== */
+
+/* Footer */
+footer {
+    background-color: #383E42; /* Colore di sfondo */
+    color: #ECE9E4; /* Colore del testo */
+    padding: 40px 0;
 }
 
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 colonne di larghezza uguale */
+    gap: 20px;  /* Distanza tra le colonne */
+}
+
+.footer-section {
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 1rem;
+    color: #ECE9E4;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #F48037;
+}
+
+.footer-section i {
+    font-size: 2rem;  /* Imposta la dimensione dell'icona */
+    color: #ECE9E4;  /* Colore dell'icona */
+    margin: 10px;  /* Distanza tra le icone */
+    transition: color 0.3s ease;  /* Effetto di transizione per il cambio colore */
+}
+
+.footer-section i:hover {
+    color: #F48037;  /* Colore delle icone al passaggio del mouse */
+}
+
+
+/* ==========================================
+   5. STILI RESPONSIVE MOBILE (@media)
+   ========================================== */
+
 @media (max-width: 768px) {
+    /* Header & Navigazione Mobile */
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    body {
+        padding-top: 0;
+    }
+
+    header .logo {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        padding-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    /* Sezione Contatti Mobile */
+    .contact-container {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .contact-header h2,
+    .contact-map-section h2,
+    .social-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-box {
+        min-height: auto;
+        margin-bottom: 20px;
+    }
+
+    /* Sezione Mappa Mobile */
     .contact-map-wrapper {
         flex-direction: column;
         text-align: center;
     }
 
+    .contact-map-container {
+        width: 100%;
+    }
+
     .contact-info-box {
         text-align: center;
         padding: 15px;
+        width: 100%;
     }
-}
 
-@media (max-width: 600px) {
+    /* Sezione Social Mobile */
     .social-box {
         width: 100%; /* Su mobile le box occupano tutta la larghezza */
     }
-}
 
-/* ############################### Rimuovi lo Scorrimento Orizzontale ############################### */
-@media (max-width: 768px) {
-    body, html {
-        overflow-x: hidden; /* Impedisce lo scorrimento orizzontale */
-    }
-
-    body {
-        margin-top: 0; /* Elimina il margine superiore */
-        padding-top: 0; /* Elimina il padding superiore */
-    }
-}
-
-/* ############################### Header Responsivo ############################### */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem 0;
-        
-    }
-
-    header nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding-left: 0;
-    }
-
-    header nav ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
-
-    header nav ul li {
-        margin: 0;
-    }
-
-    header nav ul li a {
-        font-size: 1rem;
-        color: #ECE9E4;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    header nav ul li a:hover {
-        color: #F48037;
-    }
-
-    .logo img {
-        max-width: 120px !important;
-    }
-}
-
-/* ############################### Responsivo per il Footer ############################### */
-@media (max-width: 768px) {
+    /* Footer Mobile */
     .footer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .footer-section {
+        grid-template-columns: 1fr;
         text-align: center;
-        width: 100%;
-    }
-
-    .footer-section h3 {
-        font-size: 1.2rem;
-    }
-
-    .footer-section p,
-    .footer-section a {
-        font-size: 1rem;
-    }
-
-    .footer-section i {
-        font-size: 1.5rem;
-        margin: 5px;
+        padding: 0 20px;
     }
 }

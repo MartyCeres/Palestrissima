@@ -1,3 +1,7 @@
+/* ==========================================
+   1. IMPORT E REGOLI GENERALI (RESET & BODY)
+   ========================================== */
+
 /* Aggiungi un font moderno */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
@@ -24,6 +28,35 @@ body {
     line-height: 1.6;
     padding-top: 75px;
 }
+
+/* Stile generale per i pulsanti */
+.button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #F48037;
+    color: #ECE9E4;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #F48037;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px; /* Aggiungi uno spazio sopra al pulsante */
+    transition: background-color 0.3s;
+    opacity: 0;  /* Impostiamo l'opacità iniziale a 0 */
+    animation: fadeIn 2s ease-out;  /* Applicare la stessa animazione di dissolvenza */
+    animation-delay: 1s;  /* Ritardo per far apparire il pulsante dopo il testo */
+    animation-fill-mode: forwards;  /* Mantieni l'opacità finale dopo l'animazione */
+}
+
+.button:hover {
+    background-color: transparent;
+    border-color: #F48037;
+}
+
+
+/* ==========================================
+   2. HEADER E NAVIGAZIONE
+   ========================================== */
 
 /* Header */
 header {
@@ -57,6 +90,7 @@ header nav {
     justify-content: flex-start; /* Allinea i link verso sinistra */
     padding-left: 200px; 
 }
+
 header nav ul {
     list-style: none;
     display: flex;
@@ -80,6 +114,11 @@ header nav ul li a {
 header nav ul li a:hover {
     color: #F48037;   /* Colore al passaggio del mouse (arancio) */
 }
+
+
+/* ==========================================
+   3. SEZIONE HERO
+   ========================================== */
 
 /* Sezione Hero */
 .hero {
@@ -105,30 +144,6 @@ header nav ul li a:hover {
     padding-left: 80px;
 }
 
-/* Stile per il pulsante */
-.button {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #F48037;
-    color: #ECE9E4;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid #F48037;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    margin-top: 20px; /* Aggiungi uno spazio sopra al pulsante */
-    transition: background-color 0.3s;
-    opacity: 0;  /* Impostiamo l'opacità iniziale a 0 */
-    animation: fadeIn 2s ease-out;  /* Applicare la stessa animazione di dissolvenza */
-    animation-delay: 1s;  /* Ritardo per far apparire il pulsante dopo il testo */
-    animation-fill-mode: forwards;  /* Mantieni l'opacità finale dopo l'animazione */
-}
-
-.button:hover {
-    background-color: transparent;
-    border-color: #F48037;
-}
-
 .hero h2 {
     font-size: 3.5rem;
 }
@@ -137,6 +152,11 @@ header nav ul li a:hover {
     font-size: 1.5rem;
     color: #F0EEE9;
 }
+
+
+/* ==========================================
+   4. SEZIONE SERVIZI (CARD)
+   ========================================== */
 
 /* Servizi */
 .servizi {
@@ -176,7 +196,7 @@ header nav ul li a:hover {
 
 .card img {
     width: 100%; /* La larghezza dell'immagine si adatta alla larghezza della card */
-    height: 200px; /* Imposta un'altezza fissa per tutte le immagini */
+    height: 240px; /* Imposta un'altezza fissa per tutte le immagini */
     object-fit: cover; /* Ritaglia l'immagine per adattarla al contenitore senza distorsioni */
     border-radius: 8px; /* Mantiene gli angoli arrotondati */
 }
@@ -211,6 +231,102 @@ header nav ul li a:hover {
     border-color: #F48037;
 }
 
+/* Stile per l'immagine verticale: più larga, centrata e zoomata */
+.card img.fit-vertical {
+    width: 100%;             /* Occupa tutta la larghezza disponibile */
+    height: 240px;           /* Aumentata l'altezza per renderla più grande/larga */
+    object-fit: cover;       /* Riempie lo spazio mantenendo le proporzioni */
+    object-position: center 20%; /* Mette a fuoco la parte centrale/alta (es. viso/busto) */
+    transform: scale(1);  /* ZOOM: aumenta il valore per zoomare di più (es. 1.15 o 1.2) */
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+}
+
+
+/* ==========================================
+   5. SEZIONE CERTIFICAZIONE NSCA
+   ========================================== */
+
+/* Sezione Certificazione NSCA (Invertita) */
+.certificazione-section {
+    background-color: #ffffff; /* Sfondo generale bianco */
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.certificazione-card {
+    background-color: #F48037; /* Sfondo card arancione */
+    border-radius: 16px;
+    padding: 50px;
+    max-width: 900px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.certificazione-badge {
+    margin-bottom: 25px;
+}
+
+.nsca-logo-img {
+    max-width: 240px;
+    height: auto;
+    display: inline-block;
+}
+
+.certificazione-card h2 {
+    color: #111111;
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.certificazione-text {
+    text-align: left;
+    color: #1a1a1a;
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+.certificazione-text p {
+    margin-bottom: 18px;
+}
+
+.certificazione-text p.highlight-p {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* Citazione finale in evidenza dentro la card */
+.certificazione-footer-quote {
+    margin-top: 30px;
+    padding: 22px 25px;
+    background: rgba(255, 255, 255, 0.25); /* Sfondo chiaro semi-trasparente */
+    border-left: 5px solid #111111;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.certificazione-footer-quote i {
+    font-size: 1.8rem;
+    color: #111111;
+}
+
+.certificazione-footer-quote p {
+    margin: 0;
+    font-weight: 600;
+    color: #000000;
+    font-style: italic;
+}
+
+
+/* ==========================================
+   6. FOOTER
+   ========================================== */
 
 /* Footer */
 footer {
@@ -256,187 +372,95 @@ footer {
     color: #F48037;  /* Colore delle icone al passaggio del mouse */
 }
 
-/* Media Queries per dispositivi mobili */
 
-/* Header - Menu di navigazione su tre colonne */
+/* ==========================================
+   7. STILI RESPONSIVE MOBILE (@media)
+   ========================================== */
+
 @media (max-width: 768px) {
+    /* Header & Navigazione Mobile */
     header {
-        padding: 1rem 0; /* Rimuovi il padding-left e mantieni solo il padding verticale */
+        flex-direction: column;
+        padding: 10px 0;
     }
 
-    /* Menu di navigazione */
+    header .logo {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
     header nav {
-        display: flex;
-        justify-content: center; /* Centra il menu */
-        align-items: center;
+        padding-left: 0;
         width: 100%;
-        padding-left: 0px;
+        justify-content: center;
     }
 
     header nav ul {
-        list-style: none;
-        display: grid; /* Usa grid per disporre i link in colonne */
-        grid-template-columns: repeat(3, 1fr); /* Tre colonne con larghezza uguale */
-        gap: 15px; /* Aggiungi spazio tra le colonne */
-        padding: 0;
-        margin: 0;
-        text-align: center; /* Centra il testo all'interno dei link */
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     header nav ul li {
-        margin: 0; /* Rimuovi margini extra tra gli elementi */
+        margin: 0 10px;
     }
 
-    header nav ul li a {
-        font-size: 1rem; /* Mantieni la dimensione dei link */
-        color: #ECE9E4;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    header nav ul li a:hover {
-        color: #F48037; /* Colore al passaggio del mouse */
-    }
-
-    .logo img {
-        max-width: 110px !important; /* Riduce la dimensione del logo */
-    }
-}
-
-
-
-/* Rimuovere spazio bianco in eccesso in alto */
-body {
-    margin-top: 0; /* Elimina il margine superiore */
-    padding-top: 0; /* Elimina il padding superiore */
-}
-
-
-/* Sezione Hero - Aggiungi adattamenti per schermi piccoli */
-@media (max-width: 768px) {
+    /* Hero Mobile */
     .hero {
-        background-position: center center;
-        background-size: cover;
-        height: auto; /* Rende l'altezza dinamica */
-        display: flex;
-        justify-content: center; /* Centra orizzontalmente */
-        align-items: center; /* Centra verticalmente */
-        flex-direction: column; /* Organizza il contenuto in colonna */
-    }
-
-    .hero h2 {
-        font-size: 2rem; /* Riduce la dimensione del testo */
-        text-align: center;
-    }
-
-    .hero p {
-        font-size: 1rem; /* Riduce la dimensione del paragrafo */
+        height: auto;
+        padding: 60px 20px;
     }
 
     .hero-content {
-        max-width: 90%; /* Riduce la larghezza del contenuto */
-        padding-left: 0; /* Rimuove il padding sinistro */
-        text-align: center; /* Centra il testo */
-        padding-top: 30px;
-    }
-    
-    .button {
-        width: 100%; /* Fa occupare al pulsante tutta la larghezza */
-        font-size: 1.2rem;
-    }
-}
-
-
-/* Sezione Servizi - Modifica layout delle card */
-@media (max-width: 768px) {
-    .servizi {
-        padding: 40px 10px; /* Riduce il padding laterale */
+        padding-left: 0;
+        text-align: center;
     }
 
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    /* Servizi Mobile */
     .card-container {
-        flex-direction: column; /* Colonna unica per le card */
-        gap: 30px; /* Aggiungi spazio tra le card */
-        width: 100%; /* Fa sì che le card occupino tutta la larghezza */
+        flex-direction: column;
+        align-items: center;
     }
 
     .card {
-        width: 100%; /* Fa sì che ogni card occupi tutta la larghezza */
-        margin: 0; /* Rimuove il margine tra le card */
-    }
-    
-    .card img {
-        height: 180px; /* Riduce l'altezza delle immagini */
+        width: 90%;
+        margin-bottom: 20px;
     }
 
-    .card h3 {
-        font-size: 1.3rem;
+    /* Certificazione NSCA Mobile */
+    .certificazione-section {
+        padding: 40px 15px;
     }
 
-    .card p {
-        font-size: 0.9rem;
+    .certificazione-card {
+        padding: 30px 20px;
     }
 
-    .card-button {
-        font-size: 1rem;
+    .certificazione-card h2 {
+        font-size: 1.5rem;
     }
-}
 
-/* Footer - Adattamento per dispositivi mobili */
-@media (max-width: 768px) {
+    .nsca-logo-img {
+        max-width: 180px;
+    }
+
+    .certificazione-footer-quote {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Footer Mobile */
     .footer-container {
-        display: flex;
-        flex-direction: column; /* Imposta il footer in colonna */
-        align-items: center;
-        gap: 15px;
-    }
-
-    .footer-section {
-        text-align: center; /* Centra il contenuto nel footer */
-        width: 100%;
-    }
-
-    .footer-section h3 {
-        font-size: 1.2rem;
-    }
-
-    .footer-section p, .footer-section a {
-        font-size: 0.9rem;
-    }
-    
-    .footer-section i {
-        font-size: 1.5rem; /* Riduce la dimensione delle icone */
-        margin: 5px;
-    }
-}
-
-/* Aggiunta di un layout mobile per schermi più piccoli */
-@media (max-width: 480px) {
-    body {
-        font-size: 14px; /* Riduce la dimensione del testo su schermi molto piccoli */
-    }
-    
-    .hero h2 {
-        font-size: 1.8rem; /* Riduce ulteriormente la dimensione del testo hero */
-    }
-    
-    .hero p {
-        font-size: 1rem; /* Riduce la dimensione del testo */
-    }
-
-    .button {
-        padding: 10px 20px; /* Rende il pulsante più piccolo */
-        font-size: 1rem;
-    }
-
-    .card img {
-        height: 150px; /* Riduce ulteriormente l'altezza dell'immagine */
-    }
-
-    .card h3 {
-        font-size: 1.2rem;
-    }
-
-    .card p {
-        font-size: 0.8rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 20px;
     }
 }
